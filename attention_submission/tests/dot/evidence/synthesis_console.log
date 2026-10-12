@@ -1,0 +1,556 @@
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source {C:\Users\admin\AppData\Local\Temp\attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4\scripts\compare_synthesis.tcl} -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 376.090 ; gain = 35.125
+Command: synth_design -top attention_ip_parallel -part xc7z010iclg225-1L -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Device 21-403] Loading part xc7z010iclg225-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 21428
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1124.254 ; gain = 382.773
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'attention_ip_parallel' [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:3]
+INFO: [Synth 8-6157] synthesizing module 'exp_lut' [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/exp_lut.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'exp_lut' (0#1) [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/exp_lut.v:5]
+INFO: [Synth 8-6157] synthesizing module 'round_div_signed' [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/round_div_signed.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'round_div_signed' (0#1) [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/round_div_signed.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'attention_ip_parallel' (0#1) [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:3]
+WARNING: [Synth 8-6014] Unused sequential element weight_masked_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:87]
+WARNING: [Synth 8-6014] Unused sequential element score_data_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:91]
+WARNING: [Synth 8-6014] Unused sequential element score_index_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:92]
+WARNING: [Synth 8-6014] Unused sequential element score_valid_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:93]
+WARNING: [Synth 8-6014] Unused sequential element delta_data_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:96]
+WARNING: [Synth 8-6014] Unused sequential element weight_data_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:97]
+WARNING: [Synth 8-6014] Unused sequential element weight_index_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:98]
+WARNING: [Synth 8-6014] Unused sequential element weight_valid_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/reference_rtl/attention_ip_parallel.v:99]
+WARNING: [Synth 8-7137] Register q_mem_reg in module attention_ip_parallel has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register k_mem_reg in module attention_ip_parallel has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register v_mem_reg in module attention_ip_parallel has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register score_mem_reg in module attention_ip_parallel has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register weight_mem_reg in module attention_ip_parallel has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'v_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "v_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'q_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "q_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'k_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "k_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'weight_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "weight_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'score_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "score_mem_reg" dissolved into registers
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1201.727 ; gain = 460.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1201.727 ; gain = 460.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1201.727 ; gain = 460.246
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1201.727 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/evidence/synthesis_OLD/clock.xdc]
+Finished Parsing XDC File [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/evidence/synthesis_OLD/clock.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1227.957 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1228.098 ; gain = 0.082
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1237.734 ; gain = 496.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010iclg225-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1237.734 ; gain = 496.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1237.734 ; gain = 496.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1237.734 ; gain = 496.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   18 Bit       Adders := 1     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 10    
+	               15 Bit    Registers := 4     
+	                8 Bit    Registers := 74    
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	  10 Input   18 Bit        Muxes := 1     
+	   2 Input   18 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 2     
+	  10 Input   15 Bit        Muxes := 4     
+	   4 Input   15 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 2     
+	  10 Input    8 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 1     
+	  10 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	  10 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 54    
+	  10 Input    1 Bit        Muxes := 18    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1237.734 ; gain = 496.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1237.734 ; gain = 496.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 1240.004 ; gain = 498.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 1240.004 ; gain = 498.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1240.004 ; gain = 498.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1240.004 ; gain = 498.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1240.004 ; gain = 498.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1240.004 ; gain = 498.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 1240.004 ; gain = 498.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 1240.004 ; gain = 498.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |   126|
+|2     |LUT1   |     2|
+|3     |LUT2   |   303|
+|4     |LUT3   |   190|
+|5     |LUT4   |   155|
+|6     |LUT5   |    35|
+|7     |LUT6   |   338|
+|8     |MUXF7  |    50|
+|9     |FDCE   |   159|
+|10    |FDRE   |   720|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 1240.004 ; gain = 498.523
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1240.004 ; gain = 472.117
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 1240.004 ; gain = 498.523
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1240.004 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 176 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'attention_ip_parallel' is not ideal for floorplanning, since the cellview 'attention_ip_parallel' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/evidence/synthesis_OLD/clock.xdc]
+Finished Parsing XDC File [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/evidence/synthesis_OLD/clock.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1247.055 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 9eca28fd
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:01:07 . Memory (MB): peak = 1247.055 ; gain = 870.965
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1L, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1L, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 3 -nworst 1 -delay_type max -sort_by slack.
+SYNTHESIS_COMPLETED_OLD
+Command: synth_design -top attention_ip_parallel_dot -part xc7z010iclg225-1L -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1546.512 ; gain = 129.664
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'attention_ip_parallel_dot' [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:3]
+INFO: [Synth 8-6157] synthesizing module 'exp_lut' [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/exp_lut.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'exp_lut' (0#1) [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/exp_lut.v:5]
+INFO: [Synth 8-6157] synthesizing module 'round_div_signed' [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/round_div_signed.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'round_div_signed' (0#1) [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/round_div_signed.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'attention_ip_parallel_dot' (0#1) [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:3]
+WARNING: [Synth 8-6014] Unused sequential element weight_masked_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:98]
+WARNING: [Synth 8-6014] Unused sequential element score_data_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:101]
+WARNING: [Synth 8-6014] Unused sequential element score_index_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:102]
+WARNING: [Synth 8-6014] Unused sequential element score_valid_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:103]
+WARNING: [Synth 8-6014] Unused sequential element delta_data_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:106]
+WARNING: [Synth 8-6014] Unused sequential element weight_data_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:107]
+WARNING: [Synth 8-6014] Unused sequential element weight_index_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:108]
+WARNING: [Synth 8-6014] Unused sequential element weight_valid_reg was removed.  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:109]
+WARNING: [Synth 8-7137] Register q_mem_reg[0] in module attention_ip_parallel_dot has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:58]
+WARNING: [Synth 8-7137] Register q_mem_reg[1] in module attention_ip_parallel_dot has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:58]
+WARNING: [Synth 8-7137] Register q_mem_reg[2] in module attention_ip_parallel_dot has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:58]
+WARNING: [Synth 8-7137] Register q_mem_reg[3] in module attention_ip_parallel_dot has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/rtl/attention_ip_parallel_dot.v:58]
+WARNING: [Synth 8-7137] Register k_mem_reg in module attention_ip_parallel_dot has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register v_mem_reg in module attention_ip_parallel_dot has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register score_mem_reg in module attention_ip_parallel_dot has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register weight_mem_reg in module attention_ip_parallel_dot has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'v_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "v_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'k_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "k_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'weight_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "weight_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'score_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "score_mem_reg" dissolved into registers
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1637.883 ; gain = 221.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1649.094 ; gain = 232.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1649.094 ; gain = 232.246
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1649.578 ; gain = 0.055
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/evidence/synthesis_DOT/clock.xdc]
+Finished Parsing XDC File [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/evidence/synthesis_DOT/clock.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1659.527 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1659.527 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010iclg225-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   18 Bit       Adders := 1     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 9     
+	               15 Bit    Registers := 4     
+	                8 Bit    Registers := 74    
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input   18 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 2     
+	  10 Input   15 Bit        Muxes := 4     
+	   4 Input   15 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	  10 Input    8 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 1     
+	  10 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	  10 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 48    
+	  10 Input    1 Bit        Muxes := 21    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |   172|
+|2     |LUT1   |     4|
+|3     |LUT2   |   426|
+|4     |LUT3   |   224|
+|5     |LUT4   |   202|
+|6     |LUT5   |    63|
+|7     |LUT6   |   389|
+|8     |MUXF7  |    68|
+|9     |FDCE   |   143|
+|10    |FDRE   |   720|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1659.527 ; gain = 242.680
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1659.527 ; gain = 232.246
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1659.527 ; gain = 242.680
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1659.527 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 240 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'attention_ip_parallel_dot' is not ideal for floorplanning, since the cellview 'attention_ip_parallel_dot' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/evidence/synthesis_DOT/clock.xdc]
+Finished Parsing XDC File [C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/evidence/synthesis_DOT/clock.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1659.527 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 94048a38
+INFO: [Common 17-83] Releasing license: Synthesis
+47 Infos, 43 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1659.527 ; gain = 242.742
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1L, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1L, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 3 -nworst 1 -delay_type max -sort_by slack.
+SYNTHESIS_COMPLETED_DOT
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 12 11:41:08 2026...
+Abnormal program termination (EXCEPTION_ACCESS_VIOLATION)
+Please check 'C:/Users/admin/AppData/Local/Temp/attention_parallel_dot_synth_b74312af40514d6ea54507889eac6cb4/evidence/hs_err_pid29276.log' for details

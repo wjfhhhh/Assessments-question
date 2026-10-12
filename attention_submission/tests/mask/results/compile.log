@@ -1,0 +1,4 @@
+attention_ip_causal_mask.v:41: error: Unable to bind wire/reg/memory `token_index' in `tb_attention_mask.dut'
+attention_ip_causal_mask.v:43:      : A symbol with that name was declared here. Check for declaration after use.
+attention_ip_causal_mask.v:41: error: Unable to elaborate r-value: (!(mask_enable_reg))o((token_index)<=(query_index_reg))
+2 error(s) during elaboration.

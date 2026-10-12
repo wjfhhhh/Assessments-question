@@ -1,0 +1,8 @@
+{
+  "reports_completed": true,
+  "vivado_exit_code": -1073741819,
+  "runtime_override": true,
+  "part": "xc7z010iclg225-1L",
+  "period_ns": 10,
+  "scope": "post_synthesis_internal_paths_only"
+}

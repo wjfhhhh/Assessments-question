@@ -1,0 +1,502 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Oct 12 22:10:26 2026
+# Process ID: 35212
+# Current directory: D:/VivadoProject/attention_demo/submission
+# Command line: vivado.exe -mode batch -notrace -source D:\VivadoProject\attention_demo\submission\scripts\run_demo_all.tcl -log D:\VivadoProject\attention_demo\submission\evidence\demo\submission_demo.log -journal D:\VivadoProject\attention_demo\submission\evidence\demo\submission_demo.jou
+# Log file: D:/VivadoProject/attention_demo/submission/evidence/demo/submission_demo.log
+# Journal file: D:\VivadoProject\attention_demo\submission\evidence\demo\submission_demo.jou
+# Running On: ThinkBook88, OS: Windows, CPU Frequency: 2918 MHz, CPU Physical cores: 14, Host memory: 33854 MB
+#-----------------------------------------------------------
+source {D:\VivadoProject\attention_demo\submission\scripts\run_demo_all.tcl} -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 374.188 ; gain = 31.820
+DEMO_TOOLCHAIN: D:/Xilinx/Vivado/2022.2
+DEMO_GCC: D:/Xilinx/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx/Vivado/2022.2/lib/win64.o
+Command: launch_simulation -step compile -simset sim_base
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_base'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_base'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_base' in fileset 'sim_base'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_base'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_demo_base_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_causal_mask.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_causal_mask
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_parallel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_parallel_dot.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel_dot
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/exp_lut.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exp_lut
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/round_div_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_div_signed
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_base.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_base
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_ab.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_ab
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_dot.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_dot
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_mask.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_mask
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_base
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_base'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_base'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_base_behav xil_defaultlib.tb_demo_base xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_base_behav xil_defaultlib.tb_demo_base xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.exp_lut
+Compiling module xil_defaultlib.round_div_signed
+Compiling module xil_defaultlib.attention_ip
+Compiling module xil_defaultlib.tb_demo_base
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_demo_base_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 406.137 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 406.137 ; gain = 0.000
+Command: launch_simulation -step simulate -simset sim_base
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_base'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_base'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_base' in fileset 'sim_base'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_base'...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_demo_base_behav -key {Behavioral:sim_base:Functional:tb_demo_base} -tclbatch {tb_demo_base.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_demo_base.tcl
+VERSION: base
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_demo_base_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+SCORE[0] = 3
+SCORE[1] = 2
+SCORE[2] = 1
+SCORE[3] = 0
+SCORE[4] = -1
+SCORE[5] = 3
+SCORE[6] = 2
+SCORE[7] = 1
+WEIGHT[0]: x_max=3 delta=0 raw=16
+WEIGHT[1]: x_max=3 delta=-1 raw=6
+WEIGHT[2]: x_max=3 delta=-2 raw=2
+WEIGHT[3]: x_max=3 delta=-3 raw=1
+WEIGHT[4]: x_max=3 delta=-4 raw=0
+WEIGHT[5]: x_max=3 delta=0 raw=16
+WEIGHT[6]: x_max=3 delta=-1 raw=6
+WEIGHT[7]: x_max=3 delta=-2 raw=2
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=125 final_kv_to_done=89
+L_raw=49 ACC_raw=[72,144,-72,288]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 1330 ns : File "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_base.sv" Line 90
+FOUR_DEMO_COMPLETED: base
+INFO: [Simtcl 6-16] Simulation closed
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+DEMO_TOOLCHAIN: D:/Xilinx/Vivado/2022.2
+DEMO_GCC: D:/Xilinx/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx/Vivado/2022.2/lib/win64.o
+Command: launch_simulation -step compile -simset sim_mask
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_mask'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_mask'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim'
+"xvlog --incr --relax -prj tb_demo_mask_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_causal_mask.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_causal_mask
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_parallel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_parallel_dot.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel_dot
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/exp_lut.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exp_lut
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/round_div_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_div_signed
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_base.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_base
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_ab.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_ab
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_dot.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_dot
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_mask.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_mask
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_mask
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_mask'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_mask'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_mask_behav xil_defaultlib.tb_demo_mask xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_mask_behav xil_defaultlib.tb_demo_mask xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.exp_lut
+Compiling module xil_defaultlib.round_div_signed
+Compiling module xil_defaultlib.attention_ip_causal_mask
+Compiling module xil_defaultlib.tb_demo_mask
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_demo_mask_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Command: launch_simulation -step simulate -simset sim_mask
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_mask'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_mask'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_mask' in fileset 'sim_mask'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_mask'...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_mask/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_demo_mask_behav -key {Behavioral:sim_mask:Functional:tb_demo_mask} -tclbatch {tb_demo_mask.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_demo_mask.tcl
+VERSION: mask
+MASK enable=1 query_index=2
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_demo_mask_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+SCORE[0] = 3
+SCORE[1] = 2
+SCORE[2] = 1
+SCORE[3] = 7
+SCORE[4] = 8
+SCORE[5] = 9
+SCORE[6] = 10
+SCORE[7] = 11
+WEIGHT[0]: x_max=3 delta=0 raw=16 masked=0
+WEIGHT[1]: x_max=3 delta=-1 raw=6 masked=0
+WEIGHT[2]: x_max=3 delta=-2 raw=2 masked=0
+WEIGHT[3]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[4]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[5]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[6]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[7]: x_max=3 delta=0 raw=0 masked=1
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=125 final_kv_to_done=89
+L_raw=24 ACC_raw=[34,68,-34,136]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 1330 ns : File "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_mask.sv" Line 101
+FOUR_DEMO_COMPLETED: mask
+INFO: [Simtcl 6-16] Simulation closed
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+DEMO_TOOLCHAIN: D:/Xilinx/Vivado/2022.2
+DEMO_GCC: D:/Xilinx/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx/Vivado/2022.2/lib/win64.o
+Command: launch_simulation -step compile -simset sim_ab
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_ab'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_ab'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim'
+"xvlog --incr --relax -prj tb_demo_ab_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_causal_mask.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_causal_mask
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_parallel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_parallel_dot.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel_dot
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/exp_lut.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exp_lut
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/round_div_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_div_signed
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_mask.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_mask
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_ab.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_ab
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_base.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_base
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_dot.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_dot
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_ab
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_ab'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_ab'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_ab_behav xil_defaultlib.tb_demo_ab xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_ab_behav xil_defaultlib.tb_demo_ab xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.exp_lut
+Compiling module xil_defaultlib.round_div_signed
+Compiling module xil_defaultlib.attention_ip_parallel
+Compiling module xil_defaultlib.tb_demo_ab
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_demo_ab_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Command: launch_simulation -step simulate -simset sim_ab
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_ab'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_ab'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_ab' in fileset 'sim_ab'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_ab'...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_ab/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_demo_ab_behav -key {Behavioral:sim_ab:Functional:tb_demo_ab} -tclbatch {tb_demo_ab.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_demo_ab.tcl
+VERSION: ab
+MASK enable=1 query_index=2
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_demo_ab_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+SCORE[0] = 3 RUNNING_MAX = 3
+SCORE[1] = 2 RUNNING_MAX = 3
+SCORE[2] = 1 RUNNING_MAX = 3
+SCORE[3] = 7 RUNNING_MAX = 3
+SCORE[4] = 8 RUNNING_MAX = 3
+SCORE[5] = 9 RUNNING_MAX = 3
+SCORE[6] = 10 RUNNING_MAX = 3
+SCORE[7] = 11 RUNNING_MAX = 3
+WEIGHT[0]: x_max=3 delta=0 raw=16 masked=0
+WEIGHT[1]: x_max=3 delta=-1 raw=6 masked=0
+WEIGHT[2]: x_max=3 delta=-2 raw=2 masked=0
+WEIGHT[3]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[4]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[5]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[6]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[7]: x_max=3 delta=0 raw=0 masked=1
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=93 final_kv_to_done=57
+L_raw=24 ACC_raw=[34,68,-34,136]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 1010 ns : File "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_ab.sv" Line 101
+FOUR_DEMO_COMPLETED: ab
+INFO: [Simtcl 6-16] Simulation closed
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+DEMO_TOOLCHAIN: D:/Xilinx/Vivado/2022.2
+DEMO_GCC: D:/Xilinx/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx/Vivado/2022.2/lib/win64.o
+Command: launch_simulation -step compile -simset sim_dot
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_dot'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_dot'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim'
+"xvlog --incr --relax -prj tb_demo_dot_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_causal_mask.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_causal_mask
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_parallel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip_parallel_dot.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel_dot
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/exp_lut.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exp_lut
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/rtl/round_div_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_div_signed
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_ab.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_ab
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_base.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_base
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_dot.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_dot
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_mask.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_mask
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_dot
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_dot'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_dot'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_dot_behav xil_defaultlib.tb_demo_dot xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_dot_behav xil_defaultlib.tb_demo_dot xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.exp_lut
+Compiling module xil_defaultlib.round_div_signed
+Compiling module xil_defaultlib.attention_ip_parallel_dot
+Compiling module xil_defaultlib.tb_demo_dot
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_demo_dot_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Command: launch_simulation -step simulate -simset sim_dot
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_dot'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_dot'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_dot' in fileset 'sim_dot'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_dot'...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/submission/demo/project/attention_four_versions.sim/sim_dot/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_demo_dot_behav -key {Behavioral:sim_dot:Functional:tb_demo_dot} -tclbatch {tb_demo_dot.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_demo_dot.tcl
+VERSION: dot
+MASK enable=1 query_index=2
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_demo_dot_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+SCORE[0] = 3 RUNNING_MAX = 3
+SCORE[1] = 2 RUNNING_MAX = 3
+SCORE[2] = 1 RUNNING_MAX = 3
+SCORE[3] = 7 RUNNING_MAX = 3
+SCORE[4] = 8 RUNNING_MAX = 3
+SCORE[5] = 9 RUNNING_MAX = 3
+SCORE[6] = 10 RUNNING_MAX = 3
+SCORE[7] = 11 RUNNING_MAX = 3
+WEIGHT[0]: x_max=3 delta=0 raw=16 masked=0
+WEIGHT[1]: x_max=3 delta=-1 raw=6 masked=0
+WEIGHT[2]: x_max=3 delta=-2 raw=2 masked=0
+WEIGHT[3]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[4]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[5]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[6]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[7]: x_max=3 delta=0 raw=0 masked=1
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=69 final_kv_to_done=33
+L_raw=24 ACC_raw=[34,68,-34,136]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 770 ns : File "D:/VivadoProject/attention_demo/submission/demo/tb/tb_demo_dot.sv" Line 101
+FOUR_DEMO_COMPLETED: dot
+SUBMISSION_ALL_DEMOS_COMPLETED
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 12 22:11:15 2026...

@@ -1,0 +1,14 @@
+# 运行后生成的工程和测试中间文件不纳入提交。
+demo/project/
+learning/
+**/build/
+**/__pycache__/
+**/.Xil/
+*.pyc
+*.vvp
+*.dll
+*.exe
+*.dmp
+*.jou
+hs_err_pid*
+tests/*/rerun_console.log

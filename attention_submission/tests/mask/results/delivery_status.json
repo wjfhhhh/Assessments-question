@@ -1,0 +1,15 @@
+{
+  "base_files_unchanged": 18,
+  "annotated_code_matches": true,
+  "regression_cases": 1065,
+  "vivado_actual_results": [
+    "[1, 3, -1, 6]",
+    "[100, 20, -100, -20]",
+    "[1, 2, -1, 4]",
+    "[1, 3, -1, 6]"
+  ],
+  "isolated_runtime_used": true,
+  "vivado_exit_code": -1073741819,
+  "waveform_saved": true,
+  "default_control": "01 02"
+}

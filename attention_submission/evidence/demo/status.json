@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "versions": [
+    "base",
+    "mask",
+    "ab",
+    "dot",
+    "base"
+  ],
+  "cycles": [
+    125,
+    125,
+    93,
+    69,
+    125
+  ],
+  "results": [
+    "[1, 3, -1, 6]",
+    "[1, 3, -1, 6]",
+    "[1, 3, -1, 6]",
+    "[1, 3, -1, 6]",
+    "[1, 3, -1, 6]"
+  ],
+  "protected_files": 25,
+  "changed_files": [],
+  "errors": [],
+  "vivado_exit_code": -1073741819,
+  "note": "仿真全部完成与 Vivado 退出阶段异常分别记录。"
+}

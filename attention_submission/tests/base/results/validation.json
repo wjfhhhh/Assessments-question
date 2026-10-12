@@ -1,0 +1,17 @@
+{
+  "simulator": "Icarus Verilog 13.0",
+  "functional_checks_passed": true,
+  "compiler_exit_code": 0,
+  "simulator_exit_code": 0,
+  "process_completed_cleanly": true,
+  "cases": 1218,
+  "outputs_checked": 4872,
+  "division_inputs_checked": 2074793,
+  "source_sha256": {
+    "attention_ip.v": "aa4baac8d6cbb58761f103eb1f703db663e7dd150e935aafa9c929c6bfb9dcfc",
+    "exp_lut.v": "7f37cd05fd0b913a44039860d171b75963acd1cf1f91163f88568950776ef918",
+    "round_div_signed.v": "3026ce17259df0a98f9700b8f89c4963c0106da74ad864405d3659629f9a44ae",
+    "tb_attention_ip.sv": "9ee1d2e282350b8461694ef1648d5e559ad72df4945554aea2943936cd24c264",
+    "trace_capture.sv": "063627489cf38b28b0ea5f484fba673befb6379486ce1afe03751a40d20e7e59"
+  }
+}

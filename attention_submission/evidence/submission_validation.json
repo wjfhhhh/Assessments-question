@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-12",
+  "tests": {
+    "base": {
+      "cases": 1218,
+      "passed": true,
+      "simulator_exit_code": 0,
+      "start_to_done_cycles": 125
+    },
+    "mask": {
+      "cases": 1065,
+      "passed": true,
+      "simulator_exit_code": 0,
+      "start_to_done_cycles": 125
+    },
+    "ab": {
+      "cases": 1071,
+      "passed": true,
+      "simulator_exit_code": 0,
+      "start_to_done_cycles": 93
+    },
+    "dot": {
+      "cases": 1076,
+      "passed": true,
+      "simulator_exit_code": 0,
+      "start_to_done_cycles": 69
+    }
+  },
+  "synthesis": {
+    "base": {
+      "LUT": 723,
+      "FF": 878,
+      "DSP": 0,
+      "BRAM": 0,
+      "WNS_ns": -20.02,
+      "rtl_sha256": "aa4baac8d6cbb58761f103eb1f703db663e7dd150e935aafa9c929c6bfb9dcfc"
+    },
+    "mask": {
+      "LUT": 738,
+      "FF": 883,
+      "DSP": 0,
+      "BRAM": 0,
+      "WNS_ns": -20.02,
+      "rtl_sha256": "bc21ae7e598152916fe1866e6c52535c7b0aba2c379efebb6cedcf0290ab3fdd"
+    },
+    "ab": {
+      "LUT": 853,
+      "FF": 879,
+      "DSP": 0,
+      "BRAM": 0,
+      "WNS_ns": -21.344,
+      "rtl_sha256": "a4a8b05c5702e0f391c84140c4720df0bcb7dd1576d078e04ccfe60282b292b7"
+    },
+    "dot": {
+      "LUT": 1069,
+      "FF": 863,
+      "DSP": 0,
+      "BRAM": 0,
+      "WNS_ns": -21.337,
+      "rtl_sha256": "0d730a5eb025c1407df47bcd6d0bb17a46fcee062cbdfffc0f471282bbc7948c"
+    }
+  },
+  "synthesis_part": "xc7z010iclg225-1L",
+  "synthesis_clock_period_ns": 10.0,
+  "synthesis_reports_completed": true,
+  "synthesis_exit_code": -1073741819,
+  "demo_versions_completed": [
+    "base",
+    "mask",
+    "ab",
+    "dot"
+  ],
+  "demo_cycles": [
+    125,
+    125,
+    93,
+    69
+  ],
+  "demo_exit_code": -1073741819,
+  "scope": "功能自检、四版现场入口和综合后模块内部时序；不包含布局布线或上板。"
+}

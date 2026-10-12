@@ -1,0 +1,24 @@
+VCD info: dumpfile attention_demo.vcd opened for output.
+DEMO score[0] = 0
+DEMO score[1] = -1
+DEMO score[2] = -2
+DEMO score[3] = -3
+DEMO score[4] = -4
+DEMO score[5] = 0
+DEMO score[6] = -1
+DEMO score[7] = -2
+DEMO weight[0]: delta=0 raw=16
+DEMO weight[1]: delta=-1 raw=6
+DEMO weight[2]: delta=-2 raw=2
+DEMO weight[3]: delta=-3 raw=1
+DEMO weight[4]: delta=-4 raw=0
+DEMO weight[5]: delta=0 raw=16
+DEMO weight[6]: delta=-1 raw=6
+DEMO weight[7]: delta=-2 raw=2
+DEMO L_raw=49 ACC_raw=[112,120,-2,72]
+DEMO output[0]=2
+DEMO output[1]=2
+DEMO output[2]=0
+DEMO output[3]=1
+PASS: 1218 cases, 9744 scores, 9744 weights, 4872 outputs, 2074793 division inputs
+tb_attention_ip.sv:276: $finish called at 2074794000 (1ps)

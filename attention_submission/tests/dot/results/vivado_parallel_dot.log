@@ -1,0 +1,430 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Oct 12 11:40:35 2026
+# Process ID: 26544
+# Current directory: D:/VivadoProject/attention_demo/defense_parallel_dot/verification
+# Command line: vivado.exe -mode batch -source verify_demo.tcl -log vivado_parallel_dot.log -journal vivado_parallel_dot.jou
+# Log file: D:/VivadoProject/attention_demo/defense_parallel_dot/verification/vivado_parallel_dot.log
+# Journal file: D:/VivadoProject/attention_demo/defense_parallel_dot/verification\vivado_parallel_dot.jou
+# Running On: ThinkBook88, OS: Windows, CPU Frequency: 2918 MHz, CPU Physical cores: 14, Host memory: 33854 MB
+#-----------------------------------------------------------
+source verify_demo.tcl
+# set root [file normalize [file join [file dirname [info script]] ..]]
+# set prj [file join $root project attention_parallel_dot.xpr]
+# if {[file exists $prj]} {
+#     open_project $prj
+# } else {
+#     create_project attention_parallel_dot [file join $root project] -part xc7z010iclg225-1L
+#     set_property source_mgmt_mode None [current_project]
+#     add_files -norecurse [glob [file join $root rtl *.v]]
+#     add_files -fileset sim_1 -norecurse [file join $root tb tb_attention_parallel_dot_demo.sv]
+#     add_files -fileset sim_1 -norecurse [glob [file join $root input *.hex]]
+#     set_property file_type {Memory Initialization Files} [get_files *.hex]
+# }
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+open_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 399.238 ; gain = 57.668
+# set_property source_mgmt_mode None [current_project]
+# set_property top attention_ip_parallel_dot [get_filesets sources_1]
+# set_property top tb_attention_parallel_dot_demo [get_filesets sim_1]
+# launch_simulation -step compile
+Command: launch_simulation -step compile
+INFO: [Vivado 12-12493] Simulation top is 'tb_attention_parallel_dot_demo'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_attention_parallel_dot_demo' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_attention_parallel_dot_demo_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 408.059 ; gain = 8.820
+# launch_simulation -step elaborate
+Command: launch_simulation -step elaborate
+INFO: [Vivado 12-12493] Simulation top is 'tb_attention_parallel_dot_demo'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:\Users\admin\AppData\Local\attention-tools\vivado-runtime-2022.2-dot/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 408.059 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 408.059 ; gain = 0.000
+# set kernel [file join $root project attention_parallel_dot.sim sim_1 behav xsim xsim.dir tb_attention_parallel_dot_demo_behav]
+# foreach dll [glob [file join $env(XILINX_PATH) bin unwrapped win64.o *.dll]] {
+#     file copy -force $dll $kernel
+# }
+# set control_path [file join $root input control.hex]
+# set fh [open $control_path r]
+# set original_control [read $fh]
+# close $fh
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_attention_parallel_dot_demo'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_attention_parallel_dot_demo' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_attention_parallel_dot_demo_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:\Users\admin\AppData\Local\attention-tools\vivado-runtime-2022.2-dot/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_attention_parallel_dot_demo_behav -key {Behavioral:sim_1:Functional:tb_attention_parallel_dot_demo} -tclbatch {tb_attention_parallel_dot_demo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_attention_parallel_dot_demo.tcl
+### set curr_wave [current_wave_config]
+### if { [string length $curr_wave] == 0 } {
+###   if { [llength [get_objects]] > 0} {
+###     add_wave /
+###     set_property needs_save false [current_wave_config]
+###   } else {
+###      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+###   }
+### }
+### run 0ns
+MASK enable=1 query_index=2
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_attention_parallel_dot_demo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 408.059 ; gain = 0.000
+SCORE[0] = 3 RUNNING_MAX = 3
+SCORE[1] = 2 RUNNING_MAX = 3
+SCORE[2] = 1 RUNNING_MAX = 3
+SCORE[3] = 7 RUNNING_MAX = 3
+SCORE[4] = 8 RUNNING_MAX = 3
+SCORE[5] = 9 RUNNING_MAX = 3
+SCORE[6] = 10 RUNNING_MAX = 3
+SCORE[7] = 11 RUNNING_MAX = 3
+WEIGHT[0]: x_max=3 delta=0 raw=16 masked=0
+WEIGHT[1]: x_max=3 delta=-1 raw=6 masked=0
+WEIGHT[2]: x_max=3 delta=-2 raw=2 masked=0
+WEIGHT[3]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[4]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[5]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[6]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[7]: x_max=3 delta=0 raw=0 masked=1
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=69 final_kv_to_done=33
+L_raw=24 ACC_raw=[34,68,-34,136]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 770 ns : File "D:/VivadoProject/attention_demo/defense_parallel_dot/tb/tb_attention_parallel_dot_demo.sv" Line 100
+Demo complete. Values are actual RTL outputs; no expected-answer files are used.
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_attention_parallel_dot_demo'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_attention_parallel_dot_demo' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_attention_parallel_dot_demo_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:\Users\admin\AppData\Local\attention-tools\vivado-runtime-2022.2-dot/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_attention_parallel_dot_demo_behav -key {Behavioral:sim_1:Functional:tb_attention_parallel_dot_demo} -tclbatch {tb_attention_parallel_dot_demo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_attention_parallel_dot_demo.tcl
+### set curr_wave [current_wave_config]
+### if { [string length $curr_wave] == 0 } {
+###   if { [llength [get_objects]] > 0} {
+###     add_wave /
+###     set_property needs_save false [current_wave_config]
+###   } else {
+###      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+###   }
+### }
+### run 0ns
+MASK enable=0 query_index=2
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_attention_parallel_dot_demo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 408.059 ; gain = 0.000
+SCORE[0] = 3 RUNNING_MAX = 3
+SCORE[1] = 2 RUNNING_MAX = 3
+SCORE[2] = 1 RUNNING_MAX = 3
+SCORE[3] = 7 RUNNING_MAX = 7
+SCORE[4] = 8 RUNNING_MAX = 8
+SCORE[5] = 9 RUNNING_MAX = 9
+SCORE[6] = 10 RUNNING_MAX = 10
+SCORE[7] = 11 RUNNING_MAX = 11
+WEIGHT[0]: x_max=11 delta=-8 raw=0 masked=0
+WEIGHT[1]: x_max=11 delta=-9 raw=0 masked=0
+WEIGHT[2]: x_max=11 delta=-10 raw=0 masked=0
+WEIGHT[3]: x_max=11 delta=-4 raw=0 masked=0
+WEIGHT[4]: x_max=11 delta=-3 raw=1 masked=0
+WEIGHT[5]: x_max=11 delta=-2 raw=2 masked=0
+WEIGHT[6]: x_max=11 delta=-1 raw=6 masked=0
+WEIGHT[7]: x_max=11 delta=0 raw=16 masked=0
+OUTPUT[0] = 100
+OUTPUT[1] = 20
+OUTPUT[2] = -100
+OUTPUT[3] = -20
+CYCLES: start_to_done=69 final_kv_to_done=33
+L_raw=25 ACC_raw=[2500,500,-2500,-500]
+ACTUAL RESULT = [100, 20, -100, -20]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 770 ns : File "D:/VivadoProject/attention_demo/defense_parallel_dot/tb/tb_attention_parallel_dot_demo.sv" Line 100
+Demo complete. Values are actual RTL outputs; no expected-answer files are used.
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_attention_parallel_dot_demo'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_attention_parallel_dot_demo' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_attention_parallel_dot_demo_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:\Users\admin\AppData\Local\attention-tools\vivado-runtime-2022.2-dot/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_attention_parallel_dot_demo_behav -key {Behavioral:sim_1:Functional:tb_attention_parallel_dot_demo} -tclbatch {tb_attention_parallel_dot_demo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_attention_parallel_dot_demo.tcl
+### set curr_wave [current_wave_config]
+### if { [string length $curr_wave] == 0 } {
+###   if { [llength [get_objects]] > 0} {
+###     add_wave /
+###     set_property needs_save false [current_wave_config]
+###   } else {
+###      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+###   }
+### }
+### run 0ns
+MASK enable=1 query_index=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_attention_parallel_dot_demo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 408.059 ; gain = 0.000
+SCORE[0] = 3 RUNNING_MAX = 3
+SCORE[1] = 2 RUNNING_MAX = 3
+SCORE[2] = 1 RUNNING_MAX = 3
+SCORE[3] = 7 RUNNING_MAX = 3
+SCORE[4] = 8 RUNNING_MAX = 3
+SCORE[5] = 9 RUNNING_MAX = 3
+SCORE[6] = 10 RUNNING_MAX = 3
+SCORE[7] = 11 RUNNING_MAX = 3
+WEIGHT[0]: x_max=3 delta=0 raw=16 masked=0
+WEIGHT[1]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[2]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[3]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[4]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[5]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[6]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[7]: x_max=3 delta=0 raw=0 masked=1
+OUTPUT[0] = 1
+OUTPUT[1] = 2
+OUTPUT[2] = -1
+OUTPUT[3] = 4
+CYCLES: start_to_done=69 final_kv_to_done=33
+L_raw=16 ACC_raw=[16,32,-16,64]
+ACTUAL RESULT = [1, 2, -1, 4]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 770 ns : File "D:/VivadoProject/attention_demo/defense_parallel_dot/tb/tb_attention_parallel_dot_demo.sv" Line 100
+Demo complete. Values are actual RTL outputs; no expected-answer files are used.
+INFO: [Simtcl 6-16] Simulation closed
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_attention_parallel_dot_demo'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_attention_parallel_dot_demo' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim/v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_attention_parallel_dot_demo_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: C:\Users\admin\AppData\Local\attention-tools\vivado-runtime-2022.2-dot/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_attention_parallel_dot_demo_behav xil_defaultlib.tb_attention_parallel_dot_demo xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/defense_parallel_dot/project/attention_parallel_dot.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_attention_parallel_dot_demo_behav -key {Behavioral:sim_1:Functional:tb_attention_parallel_dot_demo} -tclbatch {tb_attention_parallel_dot_demo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_attention_parallel_dot_demo.tcl
+### set curr_wave [current_wave_config]
+### if { [string length $curr_wave] == 0 } {
+###   if { [llength [get_objects]] > 0} {
+###     add_wave /
+###     set_property needs_save false [current_wave_config]
+###   } else {
+###      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+###   }
+### }
+### run 0ns
+MASK enable=1 query_index=2
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_attention_parallel_dot_demo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 408.059 ; gain = 0.000
+SCORE[0] = 3 RUNNING_MAX = 3
+SCORE[1] = 2 RUNNING_MAX = 3
+SCORE[2] = 1 RUNNING_MAX = 3
+SCORE[3] = 7 RUNNING_MAX = 3
+SCORE[4] = 8 RUNNING_MAX = 3
+SCORE[5] = 9 RUNNING_MAX = 3
+SCORE[6] = 10 RUNNING_MAX = 3
+SCORE[7] = 11 RUNNING_MAX = 3
+WEIGHT[0]: x_max=3 delta=0 raw=16 masked=0
+WEIGHT[1]: x_max=3 delta=-1 raw=6 masked=0
+WEIGHT[2]: x_max=3 delta=-2 raw=2 masked=0
+WEIGHT[3]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[4]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[5]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[6]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[7]: x_max=3 delta=0 raw=0 masked=1
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=69 final_kv_to_done=33
+L_raw=24 ACC_raw=[34,68,-34,136]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 770 ns : File "D:/VivadoProject/attention_demo/defense_parallel_dot/tb/tb_attention_parallel_dot_demo.sv" Line 100
+Demo complete. Values are actual RTL outputs; no expected-answer files are used.
+# set verify_code [catch {
+#     foreach configuration [list {01 02} {00 02} {01 00} $original_control] {
+#         set fh [open $control_path w]
+#         puts -nonewline $fh $configuration
+#         close $fh
+#         source [file join $root run_demo.tcl]
+#     }
+# } verify_message]
+# set fh [open $control_path w]
+# puts -nonewline $fh $original_control
+# close $fh
+# if {$verify_code != 0} {error $verify_message}
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 12 11:41:45 2026...

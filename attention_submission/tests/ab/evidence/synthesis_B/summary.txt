@@ -1,0 +1,5 @@
+part=xc7z010iclg225-1L
+period_ns=10.0
+latches=0
+worst_slack_ns=-21.344
+source=C:/Users/admin/AppData/Local/Temp/attention_parallel_synth_595d52aa89dd44429fd3d18860a2be63/rtl/attention_ip_parallel.v

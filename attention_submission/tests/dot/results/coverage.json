@@ -1,0 +1,225 @@
+{
+  "cases": 1076,
+  "positions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "mask_modes": [
+    0,
+    1
+  ],
+  "future_change_pairs": 8,
+  "reference_equivalence": "serial-dot AB vs parallel-dot AB, all configurations",
+  "directed_cases": [
+    {
+      "index": 1065,
+      "tag": "last_product_only"
+    },
+    {
+      "index": 1066,
+      "tag": "negative_first_is_max"
+    },
+    {
+      "index": 1067,
+      "tag": "fourth_product_reorders"
+    },
+    {
+      "index": 1068,
+      "tag": "masked_future_largest"
+    },
+    {
+      "index": 1069,
+      "tag": "last_legal_is_max"
+    },
+    {
+      "index": 1070,
+      "tag": "only_first_negative"
+    },
+    {
+      "index": 1071,
+      "tag": "lane_0_signed_extreme"
+    },
+    {
+      "index": 1072,
+      "tag": "lane_1_signed_extreme"
+    },
+    {
+      "index": 1073,
+      "tag": "lane_2_signed_extreme"
+    },
+    {
+      "index": 1074,
+      "tag": "lane_3_signed_extreme"
+    },
+    {
+      "index": 1075,
+      "tag": "adder_tree_positive_65536"
+    }
+  ],
+  "first_case": {
+    "Q": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "K": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "V": [
+      [
+        1,
+        2,
+        -1,
+        4
+      ],
+      [
+        2,
+        4,
+        -2,
+        8
+      ],
+      [
+        3,
+        6,
+        -3,
+        12
+      ],
+      [
+        4,
+        8,
+        -4,
+        16
+      ],
+      [
+        9,
+        18,
+        -9,
+        36
+      ],
+      [
+        1,
+        2,
+        -1,
+        4
+      ],
+      [
+        2,
+        4,
+        -2,
+        8
+      ],
+      [
+        3,
+        6,
+        -3,
+        12
+      ]
+    ],
+    "enable": 1,
+    "position": 2
+  },
+  "first_result": {
+    "score": [
+      3,
+      2,
+      1,
+      0,
+      -1,
+      3,
+      2,
+      1
+    ],
+    "xmax": [
+      3
+    ],
+    "delta": [
+      0,
+      -1,
+      -2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "weight": [
+      16,
+      6,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "l": [
+      24
+    ],
+    "acc": [
+      34,
+      68,
+      -34,
+      136
+    ],
+    "out": [
+      1,
+      3,
+      -1,
+      6
+    ]
+  }
+}

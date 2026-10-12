@@ -1,0 +1,20 @@
+{
+  "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\attention_ip.v": "aa4baac8d6cbb58761f103eb1f703db663e7dd150e935aafa9c929c6bfb9dcfc",
+  "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\attention_score_stage.v": "4a5e9388701a7aca208b3275db88d6364e73732eef49f76d8a6cce77618be1a5",
+  "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\attention_weight_stage.v": "adfb1c191b195f2c1182caa5815a34a62e39b2521ae37a0dbaa75fdc2577e023",
+  "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\exp_lut.v": "7f37cd05fd0b913a44039860d171b75963acd1cf1f91163f88568950776ef918",
+  "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\round_div_signed.v": "3026ce17259df0a98f9700b8f89c4963c0106da74ad864405d3659629f9a44ae",
+  "D:\\项目\\集协考核\\Assessments-question\\attention\\tb\\tb_attention_ip.sv": "9ee1d2e282350b8461694ef1648d5e559ad72df4945554aea2943936cd24c264",
+  "D:\\项目\\集协考核\\Assessments-question\\attention\\tb\\tb_attention_score_stage.sv": "c658a100ca751ef50990829de5071b7e78f8bcf3812bbd7b98873d3345dd4316",
+  "D:\\项目\\集协考核\\Assessments-question\\attention\\tb\\tb_attention_weight_stage.sv": "34ca3025baa31612273ea952a9e179d90c9df131425759ad801bb27666c3366b",
+  "D:\\项目\\集协考核\\Assessments-question\\attention\\tb\\trace_capture.sv": "063627489cf38b28b0ea5f484fba673befb6379486ce1afe03751a40d20e7e59",
+  "D:\\VivadoProject\\attention_demo\\defense_demo\\rtl\\attention_ip.v": "aa4baac8d6cbb58761f103eb1f703db663e7dd150e935aafa9c929c6bfb9dcfc",
+  "D:\\VivadoProject\\attention_demo\\defense_demo\\rtl\\exp_lut.v": "7f37cd05fd0b913a44039860d171b75963acd1cf1f91163f88568950776ef918",
+  "D:\\VivadoProject\\attention_demo\\defense_demo\\rtl\\round_div_signed.v": "3026ce17259df0a98f9700b8f89c4963c0106da74ad864405d3659629f9a44ae",
+  "D:\\VivadoProject\\attention_demo\\defense_demo\\tb\\tb_attention_demo.sv": "8bdc6b0d6987d73ba8e911adc6d28b6a71113a287b3b7bd390fd1e2b66a25007",
+  "D:\\VivadoProject\\attention_demo\\defense_demo\\input\\input_decimal.json": "438d3468890bdfda020dcdf2229d53bf20025eb19fe91c4f52c06cbab2454d37",
+  "D:\\VivadoProject\\attention_demo\\defense_demo\\input\\k.hex": "8bb239ce7d1c9bc2f06707f756330fcb401c83a5fb932e886e34c27ab53dbcc4",
+  "D:\\VivadoProject\\attention_demo\\defense_demo\\input\\q.hex": "4db1fcbc779cb0244661127c000862857949f40a913588ec8b6fb5495f082e1c",
+  "D:\\VivadoProject\\attention_demo\\defense_demo\\input\\v.hex": "c99b362b92529a797dcfb77916e45177dca5e655b0a7ffd49c0c433ddab48ffd",
+  "D:\\VivadoProject\\attention_demo\\defense_demo\\run_demo.tcl": "1381a2ba8a84b05843ec7ee55d256a48bcaae88795c01cecf94b143315ba438f"
+}

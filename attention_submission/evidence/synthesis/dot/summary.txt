@@ -1,0 +1,4 @@
+part=xc7z010iclg225-1L
+period_ns=10.0
+latches=0
+worst_slack_ns=-21.337

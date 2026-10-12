@@ -1,0 +1,67 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Oct 12 21:59:22 2026
+# Process ID: 49460
+# Current directory: D:/项目/集协考核
+# Command line: vivado.exe -mode batch -notrace -source D:\VivadoProject\attention_demo\submission\scripts\synthesize_all.tcl -log D:\VivadoProject\attention_demo\submission\evidence\synthesis.log -journal D:\VivadoProject\attention_demo\submission\evidence\synthesis.jou
+# Log file: D:/VivadoProject/attention_demo/submission/evidence/synthesis.log
+# Journal file: D:\VivadoProject\attention_demo\submission\evidence\synthesis.jou
+# Running On: ThinkBook88, OS: Windows, CPU Frequency: 2918 MHz, CPU Physical cores: 14, Host memory: 33854 MB
+#-----------------------------------------------------------
+source {D:\VivadoProject\attention_demo\submission\scripts\synthesize_all.tcl} -notrace
+DEMO_TOOLCHAIN: D:/Xilinx_Vitis_2022/Vivado/2022.2
+DEMO_GCC: D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx_Vitis_2022/Vivado/2022.2/lib/win64.o
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 342.027 ; gain = 34.000
+Command: synth_design -top attention_ip -part xc7z010iclg225-1L -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Device 21-403] Loading part xc7z010iclg225-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 44056
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx_Vitis_2022/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1091.172 ; gain = 380.254
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'attention_ip' [D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v:3]
+INFO: [Synth 8-6157] synthesizing module 'exp_lut' [D:/VivadoProject/attention_demo/submission/demo/rtl/exp_lut.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'exp_lut' (0#1) [D:/VivadoProject/attention_demo/submission/demo/rtl/exp_lut.v:5]
+INFO: [Synth 8-6157] synthesizing module 'round_div_signed' [D:/VivadoProject/attention_demo/submission/demo/rtl/round_div_signed.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'round_div_signed' (0#1) [D:/VivadoProject/attention_demo/submission/demo/rtl/round_div_signed.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'attention_ip' (0#1) [D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v:3]
+WARNING: [Synth 8-6014] Unused sequential element score_data_reg was removed.  [D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v:70]
+WARNING: [Synth 8-6014] Unused sequential element score_index_reg was removed.  [D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v:71]
+WARNING: [Synth 8-6014] Unused sequential element score_valid_reg was removed.  [D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v:72]
+WARNING: [Synth 8-6014] Unused sequential element delta_data_reg was removed.  [D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v:75]
+WARNING: [Synth 8-6014] Unused sequential element weight_data_reg was removed.  [D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v:76]
+WARNING: [Synth 8-6014] Unused sequential element weight_index_reg was removed.  [D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v:77]
+WARNING: [Synth 8-6014] Unused sequential element weight_valid_reg was removed.  [D:/VivadoProject/attention_demo/submission/demo/rtl/attention_ip.v:78]
+WARNING: [Synth 8-7137] Register q_mem_reg in module attention_ip has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register k_mem_reg in module attention_ip has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register v_mem_reg in module attention_ip has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register score_mem_reg in module attention_ip has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register weight_mem_reg in module attention_ip has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'v_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "v_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'q_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "q_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'k_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "k_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'weight_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "weight_mem_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'score_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "score_mem_reg" dissolved into registers

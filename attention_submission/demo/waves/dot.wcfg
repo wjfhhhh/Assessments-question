@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_demo_dot_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_demo_dot" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="36" />
+   <wvobject fp_name="/tb_demo_dot/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/data_ready" type="logic">
+      <obj_property name="ElementShortName">data_ready</obj_property>
+      <obj_property name="ObjectShortName">data_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/q_valid" type="logic">
+      <obj_property name="ElementShortName">q_valid</obj_property>
+      <obj_property name="ObjectShortName">q_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/kv_valid" type="logic">
+      <obj_property name="ElementShortName">kv_valid</obj_property>
+      <obj_property name="ObjectShortName">kv_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/score_valid" type="logic">
+      <obj_property name="ElementShortName">score_valid</obj_property>
+      <obj_property name="ObjectShortName">score_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/weight_valid" type="logic">
+      <obj_property name="ElementShortName">weight_valid</obj_property>
+      <obj_property name="ObjectShortName">weight_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/out_valid" type="logic">
+      <obj_property name="ElementShortName">out_valid</obj_property>
+      <obj_property name="ObjectShortName">out_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/mask_enable" type="logic">
+      <obj_property name="ElementShortName">mask_enable</obj_property>
+      <obj_property name="ObjectShortName">mask_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/mask_enable_latched" type="logic">
+      <obj_property name="ElementShortName">mask_enable_latched</obj_property>
+      <obj_property name="ObjectShortName">mask_enable_latched</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/weight_masked" type="logic">
+      <obj_property name="ElementShortName">weight_masked</obj_property>
+      <obj_property name="ObjectShortName">weight_masked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/state_name" type="array">
+      <obj_property name="ElementShortName">state_name[63:0]</obj_property>
+      <obj_property name="ObjectShortName">state_name[63:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/token_index" type="array">
+      <obj_property name="ElementShortName">token_index[2:0]</obj_property>
+      <obj_property name="ObjectShortName">token_index[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/elem_index" type="array">
+      <obj_property name="ElementShortName">elem_index[1:0]</obj_property>
+      <obj_property name="ObjectShortName">elem_index[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/score_index" type="array">
+      <obj_property name="ElementShortName">score_index[2:0]</obj_property>
+      <obj_property name="ObjectShortName">score_index[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/weight_index" type="array">
+      <obj_property name="ElementShortName">weight_index[2:0]</obj_property>
+      <obj_property name="ObjectShortName">weight_index[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/weight_raw" type="array">
+      <obj_property name="ElementShortName">weight_raw[4:0]</obj_property>
+      <obj_property name="ObjectShortName">weight_raw[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/l_raw" type="array">
+      <obj_property name="ElementShortName">l_raw[7:0]</obj_property>
+      <obj_property name="ObjectShortName">l_raw[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/q_in" type="array">
+      <obj_property name="ElementShortName">q_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">q_in[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/k_in" type="array">
+      <obj_property name="ElementShortName">k_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">k_in[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/v_in" type="array">
+      <obj_property name="ElementShortName">v_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">v_in[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/score_data" type="array">
+      <obj_property name="ElementShortName">score_data[17:0]</obj_property>
+      <obj_property name="ObjectShortName">score_data[17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/x_max" type="array">
+      <obj_property name="ElementShortName">x_max[17:0]</obj_property>
+      <obj_property name="ObjectShortName">x_max[17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/delta_data" type="array">
+      <obj_property name="ElementShortName">delta_data[17:0]</obj_property>
+      <obj_property name="ObjectShortName">delta_data[17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/acc0_raw" type="array">
+      <obj_property name="ElementShortName">acc0_raw[14:0]</obj_property>
+      <obj_property name="ObjectShortName">acc0_raw[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/acc1_raw" type="array">
+      <obj_property name="ElementShortName">acc1_raw[14:0]</obj_property>
+      <obj_property name="ObjectShortName">acc1_raw[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/acc2_raw" type="array">
+      <obj_property name="ElementShortName">acc2_raw[14:0]</obj_property>
+      <obj_property name="ObjectShortName">acc2_raw[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/acc3_raw" type="array">
+      <obj_property name="ElementShortName">acc3_raw[14:0]</obj_property>
+      <obj_property name="ObjectShortName">acc3_raw[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/out_data" type="array">
+      <obj_property name="ElementShortName">out_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out_data[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/result0" type="array">
+      <obj_property name="ElementShortName">result0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">result0[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/result1" type="array">
+      <obj_property name="ElementShortName">result1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">result1[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/result2" type="array">
+      <obj_property name="ElementShortName">result2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">result2[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_demo_dot/result3" type="array">
+      <obj_property name="ElementShortName">result3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">result3[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

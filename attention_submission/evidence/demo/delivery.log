@@ -1,0 +1,1428 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Oct 12 14:41:33 2026
+# Process ID: 12964
+# Current directory: D:/项目/集协考核
+# Command line: vivado.exe -mode batch -source D:\VivadoProject\attention_demo\defense_four_versions\verification\path_fix_20261012\verify_delivery.tcl -log D:\VivadoProject\attention_demo\defense_four_versions\verification\path_fix_20261012\delivery.log -journal D:\VivadoProject\attention_demo\defense_four_versions\verification\path_fix_20261012\delivery.jou
+# Log file: D:/VivadoProject/attention_demo/defense_four_versions/verification/path_fix_20261012/delivery.log
+# Journal file: D:\VivadoProject\attention_demo\defense_four_versions\verification\path_fix_20261012\delivery.jou
+# Running On: ThinkBook88, OS: Windows, CPU Frequency: 2918 MHz, CPU Physical cores: 14, Host memory: 33854 MB
+#-----------------------------------------------------------
+source {D:\VivadoProject\attention_demo\defense_four_versions\verification\path_fix_20261012\verify_delivery.tcl}
+# set delivery_root [file normalize [file join [file dirname [info script]] .. ..]]
+# set ::env(PATH) "D:/Xilinx_Vitis_2022/Vivado/2022.2/bin/unwrapped/win64.o;D:/Xilinx/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin;$::env(PATH)"
+# set ::env(RDI_LIBDIR) D:/missing-simulator-library
+# unset -nocomplain ::env(LIBRARY_PATH)
+# set original_path $::env(PATH)
+# foreach entry {01_base.tcl 02_mask.tcl 03_ab.tcl 04_dot.tcl 01_base.tcl} {
+#     source -encoding utf-8 [file join $delivery_root $entry]
+#     if {$::env(PATH) ne $original_path || $::env(RDI_LIBDIR) ne "D:/missing-simulator-library" || [info exists ::env(LIBRARY_PATH)]} {
+#         error "Environment was not restored after $entry"
+#     }
+#     puts "DELIVERY_ENTRY_PASSED: $entry"
+# }
+## set four_demo_root [file normalize [file dirname [info script]]]
+## source -encoding utf-8 [file join $four_demo_root run_version.tcl]
+### source -encoding utf-8 [file join [file dirname [info script]] tool_environment.tcl]
+#### proc demo_push_tool_environment {runtime} {
+####     set candidates [list [file normalize [file join [file dirname [info nameofexecutable]] .. .. ..]]]
+####     if {[info exists ::env(XILINX_VIVADO)]} {lappend candidates $::env(XILINX_VIVADO)}
+####     if {[info exists ::env(RDI_DATADIR)]} {
+####         foreach directory [split $::env(RDI_DATADIR) {;}] {
+####             lappend candidates [file dirname $directory]
+####         }
+####     }
+####     set installation {}
+####     foreach candidate $candidates {
+####         if {[file exists [file join $candidate bin vivado.bat]] &&
+####             [file exists [file join $candidate tps mingw 6.2.0 win64.o nt bin gcc.exe]]} {
+####             set installation [file normalize $candidate]
+####             break
+####         }
+####     }
+####     if {$installation eq {}} {error "Cannot locate a complete Vivado 2022.2 installation and its GCC."}
+#### 
+####     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+####     set roots [list $installation]
+####     if {$use_runtime} {set roots [linsert $roots 0 $runtime]}
+####     set libdirs {}
+####     foreach root $roots {lappend libdirs [file join $root lib win64.o]}
+####     foreach library {librdi_simulator_kernel.dll librdi_simbridge_kernel.dll} {
+####         set found 0
+####         foreach directory $libdirs {
+####             if {[file exists [file join $directory $library]]} {set found 1; break}
+####         }
+####         if {!$found} {error "Missing simulator runtime library: $library"}
+####     }
+#### 
+####     set gcc [file join $installation tps mingw 6.2.0 win64.o nt bin]
+####     set paths [list [file join $installation bin] $gcc]
+####     if {$use_runtime} {set paths [linsert $paths 0 [file join $runtime bin unwrapped win64.o]]}
+####     lappend paths [file join $installation tps mingw 6.2.0 win64.o nt libexec gcc x86_64-w64-mingw32 6.2.0]
+####     foreach directory $libdirs {lappend paths $directory}
+#### 
+####     set saved [dict create]
+####     foreach key {PATH LIBRARY_PATH XILINX_PATH XILINX_VIVADO RDI_APPROOT RDI_BINROOT RDI_LIBDIR RDI_DATADIR HDI_APPROOT} {
+####         if {![catch {set ::env($key)} value]} {
+####             dict set saved $key [list 1 $value]
+####         } else {
+####             dict set saved $key [list 0 {}]
+####         }
+####     }
+####     # 仅设置 XILINX_PATH 无法修复已启动 GUI 中缓存或继承的搜索路径。
+####     # 显式提供库搜索目录，避免链接器报找不到仿真内核。
+####     set ::env(PATH) "[join $paths {;}];$::env(PATH)"
+####     set ::env(LIBRARY_PATH) [join $libdirs {;}]
+####     set ::env(XILINX_VIVADO) $installation
+####     if {$use_runtime} {set ::env(XILINX_PATH) $runtime} else {unset -nocomplain ::env(XILINX_PATH)}
+####     set ::env(RDI_APPROOT) [join $roots {;}]
+####     set ::env(RDI_BINROOT) [file join $installation bin]
+####     set ::env(RDI_LIBDIR) [join $libdirs {;}]
+####     set ::env(RDI_DATADIR) [file join $installation data]
+####     set ::env(HDI_APPROOT) $installation
+####     puts "DEMO_TOOLCHAIN: $installation"
+####     puts "DEMO_GCC: $gcc"
+####     puts "DEMO_LIBRARY_PATH: $::env(LIBRARY_PATH)"
+####     return $saved
+#### }
+#### proc demo_pop_tool_environment {saved} {
+####     dict for {key entry} $saved {
+####         if {[lindex $entry 0]} {
+####             set ::env($key) [lindex $entry 1]
+####         } else {
+####             unset -nocomplain ::env($key)
+####         }
+####     }
+#### }
+### proc run_demo_version {version} {
+###     global four_demo_root
+###     set root $four_demo_root
+###     if {$version ni {base mask ab dot}} {error "Unknown version: $version"}
+###     set tops [dict create base attention_ip mask attention_ip_causal_mask ab attention_ip_parallel dot attention_ip_parallel_dot]
+###     # 先检查所选输入，格式有误时不启动仿真。
+###     set counts {q 4 k 32 v 32}
+###     if {$version ne "base"} {lappend counts control 2}
+###     foreach {name count} $counts {
+###         set fh [open [file join $root input ${version}_${name}.hex] r]
+###         set tokens [regexp -all -inline {\S+} [read $fh]]
+###         close $fh
+###         if {[llength $tokens] != $count} {error "$version/$name requires $count bytes"}
+###         foreach token $tokens {
+###             if {![regexp {^[0-9a-fA-F]{2}$} $token]} {error "Invalid byte: $token"}
+###         }
+###         if {$name eq "control"} {
+###             scan [lindex $tokens 0] %x enabled
+###             scan [lindex $tokens 1] %x position
+###             if {$enabled>1 || $position>7} {error "Control requires 00/01 and 00..07"}
+###         }
+###     }
+###     if {[llength [get_projects -quiet]] > 0} {
+###         catch {close_sim}
+###         # 重新打开工程以清除仿真工具缓存的上一仿真集编译列表。
+###         close_project
+###     }
+###     if {[llength [get_projects -quiet]] == 0} {
+###         set xpr [file join $root project attention_four_versions.xpr]
+###         if {[file exists $xpr]} {
+###             open_project $xpr
+###         } else {
+###             create_project attention_four_versions [file join $root project] -part xc7z010iclg225-1L
+###             set_property source_mgmt_mode None [current_project]
+###             add_files -norecurse [glob [file join $root rtl *.v]]
+###             foreach label {base mask ab dot} {
+###                 set fs sim_$label
+###                 create_fileset -simset $fs
+###                 add_files -fileset $fs -norecurse [file join $root tb tb_demo_${label}.sv]
+###                 add_files -fileset $fs -norecurse [glob [file join $root input ${label}_*.hex]]
+###                 set_property top tb_demo_$label [get_filesets $fs]
+###                 set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###             }
+###             set_property file_type {Memory Initialization Files} [get_files *.hex]
+###         }
+###     }
+###     set fs sim_$version
+###     set top tb_demo_$version
+###     # 显式编译四个独立测试平台，展开时仅运行选中的顶层。
+###     # 避免本机自动层次分析失效以及仿真集切换时沿用不完整的编译列表。
+###     set_property source_mgmt_mode None [current_project]
+###     foreach label {base mask ab dot} {
+###         set simset [get_filesets sim_$label]
+###         foreach tb_file [glob [file join $root tb *.sv]] {
+###             if {[llength [get_files -quiet -of_objects $simset $tb_file]] == 0} {
+###                 add_files -fileset sim_$label -norecurse $tb_file
+###             }
+###         }
+###     }
+###     set_property top [dict get $tops $version] [get_filesets sources_1]
+###     current_fileset -simset [get_filesets $fs]
+###     set_property top $top [get_filesets $fs]
+###     set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###     # 本机运行库异常时复用已经准备好的隔离副本，仅影响本次工具调用。
+###     set runtime [file normalize [file join $::env(LOCALAPPDATA) attention-tools vivado-runtime-2022.2-dot]]
+###     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+###     set saved_environment [demo_push_tool_environment $runtime]
+###     set code [catch {
+###         # 分步执行流程会复用模拟器缓存；切换后清除失效工程对象和源码列表。
+###         if {[llength [info commands ::tclapp::xilinx::xsim::usf_init_vars]]} {
+###             ::tclapp::xilinx::xsim::usf_init_vars
+###         }
+###         launch_simulation -simset $fs -step compile
+###         launch_simulation -simset $fs -step elaborate
+###         if {$use_runtime} {
+###             set kernel [file join $root project attention_four_versions.sim $fs behav xsim xsim.dir ${top}_behav]
+###             foreach dll [glob [file join $runtime bin unwrapped win64.o *.dll]] {
+###                 file copy -force $dll $kernel
+###             }
+###         }
+###         launch_simulation -simset $fs -step simulate
+###         log_wave -r /$top/*
+###         create_wave_config ${version}_wave
+###         foreach name {clk rst_n start data_ready q_valid kv_valid score_valid weight_valid out_valid done} {
+###             add_wave /$top/$name
+###         }
+###         if {$version ne "base"} {
+###             foreach name {mask_enable mask_enable_latched weight_masked} {add_wave /$top/$name}
+###         }
+###         set item [add_wave /$top/state_name]
+###         set_property radix ascii $item
+###         foreach name {state token_index elem_index score_index weight_index weight_raw l_raw} {
+###             set item [add_wave /$top/$name]
+###             set_property radix unsigned $item
+###         }
+###         foreach name {q_in k_in v_in score_data x_max delta_data acc0_raw acc1_raw acc2_raw acc3_raw out_data result0 result1 result2 result3} {
+###             set item [add_wave /$top/$name]
+###             set_property radix dec $item
+###         }
+###         run all
+###         catch {wave zoom full}
+###         save_wave_config [file join $root waves ${version}.wcfg]
+###         puts "FOUR_DEMO_COMPLETED: $version"
+###     } message]
+###     demo_pop_tool_environment $saved_environment
+###     if {$code != 0} {error $message}
+### }
+## run_demo_version base
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+DEMO_TOOLCHAIN: D:/Xilinx_Vitis_2022/Vivado/2022.2
+DEMO_GCC: D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx_Vitis_2022/Vivado/2022.2/lib/win64.o
+Command: launch_simulation -step compile -simset sim_base
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_base'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_base'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_base' in fileset 'sim_base'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_base'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_demo_base_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_base
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_base'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_base'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_base_behav xil_defaultlib.tb_demo_base xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_base_behav xil_defaultlib.tb_demo_base xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Command: launch_simulation -step simulate -simset sim_base
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_base'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_base'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_base' in fileset 'sim_base'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_base'...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_demo_base_behav -key {Behavioral:sim_base:Functional:tb_demo_base} -tclbatch {tb_demo_base.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_demo_base.tcl
+### current_wave_config
+VERSION: base
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_demo_base_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+SCORE[0] = 3
+SCORE[1] = 2
+SCORE[2] = 1
+SCORE[3] = 0
+SCORE[4] = -1
+SCORE[5] = 3
+SCORE[6] = 2
+SCORE[7] = 1
+WEIGHT[0]: x_max=3 delta=0 raw=16
+WEIGHT[1]: x_max=3 delta=-1 raw=6
+WEIGHT[2]: x_max=3 delta=-2 raw=2
+WEIGHT[3]: x_max=3 delta=-3 raw=1
+WEIGHT[4]: x_max=3 delta=-4 raw=0
+WEIGHT[5]: x_max=3 delta=0 raw=16
+WEIGHT[6]: x_max=3 delta=-1 raw=6
+WEIGHT[7]: x_max=3 delta=-2 raw=2
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=125 final_kv_to_done=89
+L_raw=49 ACC_raw=[72,144,-72,288]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 1330 ns : File "D:/VivadoProject/attention_demo/defense_four_versions/tb/tb_demo_base.sv" Line 90
+FOUR_DEMO_COMPLETED: base
+DELIVERY_ENTRY_PASSED: 01_base.tcl
+## set four_demo_root [file normalize [file dirname [info script]]]
+## source -encoding utf-8 [file join $four_demo_root run_version.tcl]
+### source -encoding utf-8 [file join [file dirname [info script]] tool_environment.tcl]
+#### proc demo_push_tool_environment {runtime} {
+####     set candidates [list [file normalize [file join [file dirname [info nameofexecutable]] .. .. ..]]]
+####     if {[info exists ::env(XILINX_VIVADO)]} {lappend candidates $::env(XILINX_VIVADO)}
+####     if {[info exists ::env(RDI_DATADIR)]} {
+####         foreach directory [split $::env(RDI_DATADIR) {;}] {
+####             lappend candidates [file dirname $directory]
+####         }
+####     }
+####     set installation {}
+####     foreach candidate $candidates {
+####         if {[file exists [file join $candidate bin vivado.bat]] &&
+####             [file exists [file join $candidate tps mingw 6.2.0 win64.o nt bin gcc.exe]]} {
+####             set installation [file normalize $candidate]
+####             break
+####         }
+####     }
+####     if {$installation eq {}} {error "Cannot locate a complete Vivado 2022.2 installation and its GCC."}
+#### 
+####     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+####     set roots [list $installation]
+####     if {$use_runtime} {set roots [linsert $roots 0 $runtime]}
+####     set libdirs {}
+####     foreach root $roots {lappend libdirs [file join $root lib win64.o]}
+####     foreach library {librdi_simulator_kernel.dll librdi_simbridge_kernel.dll} {
+####         set found 0
+####         foreach directory $libdirs {
+####             if {[file exists [file join $directory $library]]} {set found 1; break}
+####         }
+####         if {!$found} {error "Missing simulator runtime library: $library"}
+####     }
+#### 
+####     set gcc [file join $installation tps mingw 6.2.0 win64.o nt bin]
+####     set paths [list [file join $installation bin] $gcc]
+####     if {$use_runtime} {set paths [linsert $paths 0 [file join $runtime bin unwrapped win64.o]]}
+####     lappend paths [file join $installation tps mingw 6.2.0 win64.o nt libexec gcc x86_64-w64-mingw32 6.2.0]
+####     foreach directory $libdirs {lappend paths $directory}
+#### 
+####     set saved [dict create]
+####     foreach key {PATH LIBRARY_PATH XILINX_PATH XILINX_VIVADO RDI_APPROOT RDI_BINROOT RDI_LIBDIR RDI_DATADIR HDI_APPROOT} {
+####         if {![catch {set ::env($key)} value]} {
+####             dict set saved $key [list 1 $value]
+####         } else {
+####             dict set saved $key [list 0 {}]
+####         }
+####     }
+####     # 仅设置 XILINX_PATH 无法修复已启动 GUI 中缓存或继承的搜索路径。
+####     # 显式提供库搜索目录，避免链接器报找不到仿真内核。
+####     set ::env(PATH) "[join $paths {;}];$::env(PATH)"
+####     set ::env(LIBRARY_PATH) [join $libdirs {;}]
+####     set ::env(XILINX_VIVADO) $installation
+####     if {$use_runtime} {set ::env(XILINX_PATH) $runtime} else {unset -nocomplain ::env(XILINX_PATH)}
+####     set ::env(RDI_APPROOT) [join $roots {;}]
+####     set ::env(RDI_BINROOT) [file join $installation bin]
+####     set ::env(RDI_LIBDIR) [join $libdirs {;}]
+####     set ::env(RDI_DATADIR) [file join $installation data]
+####     set ::env(HDI_APPROOT) $installation
+####     puts "DEMO_TOOLCHAIN: $installation"
+####     puts "DEMO_GCC: $gcc"
+####     puts "DEMO_LIBRARY_PATH: $::env(LIBRARY_PATH)"
+####     return $saved
+#### }
+#### proc demo_pop_tool_environment {saved} {
+####     dict for {key entry} $saved {
+####         if {[lindex $entry 0]} {
+####             set ::env($key) [lindex $entry 1]
+####         } else {
+####             unset -nocomplain ::env($key)
+####         }
+####     }
+#### }
+### proc run_demo_version {version} {
+###     global four_demo_root
+###     set root $four_demo_root
+###     if {$version ni {base mask ab dot}} {error "Unknown version: $version"}
+###     set tops [dict create base attention_ip mask attention_ip_causal_mask ab attention_ip_parallel dot attention_ip_parallel_dot]
+###     # 先检查所选输入，格式有误时不启动仿真。
+###     set counts {q 4 k 32 v 32}
+###     if {$version ne "base"} {lappend counts control 2}
+###     foreach {name count} $counts {
+###         set fh [open [file join $root input ${version}_${name}.hex] r]
+###         set tokens [regexp -all -inline {\S+} [read $fh]]
+###         close $fh
+###         if {[llength $tokens] != $count} {error "$version/$name requires $count bytes"}
+###         foreach token $tokens {
+###             if {![regexp {^[0-9a-fA-F]{2}$} $token]} {error "Invalid byte: $token"}
+###         }
+###         if {$name eq "control"} {
+###             scan [lindex $tokens 0] %x enabled
+###             scan [lindex $tokens 1] %x position
+###             if {$enabled>1 || $position>7} {error "Control requires 00/01 and 00..07"}
+###         }
+###     }
+###     if {[llength [get_projects -quiet]] > 0} {
+###         catch {close_sim}
+###         # 重新打开工程以清除仿真工具缓存的上一仿真集编译列表。
+###         close_project
+###     }
+###     if {[llength [get_projects -quiet]] == 0} {
+###         set xpr [file join $root project attention_four_versions.xpr]
+###         if {[file exists $xpr]} {
+###             open_project $xpr
+###         } else {
+###             create_project attention_four_versions [file join $root project] -part xc7z010iclg225-1L
+###             set_property source_mgmt_mode None [current_project]
+###             add_files -norecurse [glob [file join $root rtl *.v]]
+###             foreach label {base mask ab dot} {
+###                 set fs sim_$label
+###                 create_fileset -simset $fs
+###                 add_files -fileset $fs -norecurse [file join $root tb tb_demo_${label}.sv]
+###                 add_files -fileset $fs -norecurse [glob [file join $root input ${label}_*.hex]]
+###                 set_property top tb_demo_$label [get_filesets $fs]
+###                 set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###             }
+###             set_property file_type {Memory Initialization Files} [get_files *.hex]
+###         }
+###     }
+###     set fs sim_$version
+###     set top tb_demo_$version
+###     # 显式编译四个独立测试平台，展开时仅运行选中的顶层。
+###     # 避免本机自动层次分析失效以及仿真集切换时沿用不完整的编译列表。
+###     set_property source_mgmt_mode None [current_project]
+###     foreach label {base mask ab dot} {
+###         set simset [get_filesets sim_$label]
+###         foreach tb_file [glob [file join $root tb *.sv]] {
+###             if {[llength [get_files -quiet -of_objects $simset $tb_file]] == 0} {
+###                 add_files -fileset sim_$label -norecurse $tb_file
+###             }
+###         }
+###     }
+###     set_property top [dict get $tops $version] [get_filesets sources_1]
+###     current_fileset -simset [get_filesets $fs]
+###     set_property top $top [get_filesets $fs]
+###     set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###     # 本机运行库异常时复用已经准备好的隔离副本，仅影响本次工具调用。
+###     set runtime [file normalize [file join $::env(LOCALAPPDATA) attention-tools vivado-runtime-2022.2-dot]]
+###     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+###     set saved_environment [demo_push_tool_environment $runtime]
+###     set code [catch {
+###         # 分步执行流程会复用模拟器缓存；切换后清除失效工程对象和源码列表。
+###         if {[llength [info commands ::tclapp::xilinx::xsim::usf_init_vars]]} {
+###             ::tclapp::xilinx::xsim::usf_init_vars
+###         }
+###         launch_simulation -simset $fs -step compile
+###         launch_simulation -simset $fs -step elaborate
+###         if {$use_runtime} {
+###             set kernel [file join $root project attention_four_versions.sim $fs behav xsim xsim.dir ${top}_behav]
+###             foreach dll [glob [file join $runtime bin unwrapped win64.o *.dll]] {
+###                 file copy -force $dll $kernel
+###             }
+###         }
+###         launch_simulation -simset $fs -step simulate
+###         log_wave -r /$top/*
+###         create_wave_config ${version}_wave
+###         foreach name {clk rst_n start data_ready q_valid kv_valid score_valid weight_valid out_valid done} {
+###             add_wave /$top/$name
+###         }
+###         if {$version ne "base"} {
+###             foreach name {mask_enable mask_enable_latched weight_masked} {add_wave /$top/$name}
+###         }
+###         set item [add_wave /$top/state_name]
+###         set_property radix ascii $item
+###         foreach name {state token_index elem_index score_index weight_index weight_raw l_raw} {
+###             set item [add_wave /$top/$name]
+###             set_property radix unsigned $item
+###         }
+###         foreach name {q_in k_in v_in score_data x_max delta_data acc0_raw acc1_raw acc2_raw acc3_raw out_data result0 result1 result2 result3} {
+###             set item [add_wave /$top/$name]
+###             set_property radix dec $item
+###         }
+###         run all
+###         catch {wave zoom full}
+###         save_wave_config [file join $root waves ${version}.wcfg]
+###         puts "FOUR_DEMO_COMPLETED: $version"
+###     } message]
+###     demo_pop_tool_environment $saved_environment
+###     if {$code != 0} {error $message}
+### }
+## run_demo_version mask
+INFO: [Simtcl 6-16] Simulation closed
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+DEMO_TOOLCHAIN: D:/Xilinx_Vitis_2022/Vivado/2022.2
+DEMO_GCC: D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx_Vitis_2022/Vivado/2022.2/lib/win64.o
+Command: launch_simulation -step compile -simset sim_mask
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_mask'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_mask'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim'
+"xvlog --incr --relax -prj tb_demo_mask_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_mask
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_mask'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_mask'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_mask_behav xil_defaultlib.tb_demo_mask xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_mask_behav xil_defaultlib.tb_demo_mask xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Command: launch_simulation -step simulate -simset sim_mask
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_mask'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_mask'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_mask' in fileset 'sim_mask'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim/mask_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_mask'...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_mask/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_demo_mask_behav -key {Behavioral:sim_mask:Functional:tb_demo_mask} -tclbatch {tb_demo_mask.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_demo_mask.tcl
+### current_wave_config
+VERSION: mask
+MASK enable=1 query_index=2
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_demo_mask_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+SCORE[0] = 3
+SCORE[1] = 2
+SCORE[2] = 1
+SCORE[3] = 7
+SCORE[4] = 8
+SCORE[5] = 9
+SCORE[6] = 10
+SCORE[7] = 11
+WEIGHT[0]: x_max=3 delta=0 raw=16 masked=0
+WEIGHT[1]: x_max=3 delta=-1 raw=6 masked=0
+WEIGHT[2]: x_max=3 delta=-2 raw=2 masked=0
+WEIGHT[3]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[4]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[5]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[6]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[7]: x_max=3 delta=0 raw=0 masked=1
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=125 final_kv_to_done=89
+L_raw=24 ACC_raw=[34,68,-34,136]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 1330 ns : File "D:/VivadoProject/attention_demo/defense_four_versions/tb/tb_demo_mask.sv" Line 101
+FOUR_DEMO_COMPLETED: mask
+DELIVERY_ENTRY_PASSED: 02_mask.tcl
+## set four_demo_root [file normalize [file dirname [info script]]]
+## source -encoding utf-8 [file join $four_demo_root run_version.tcl]
+### source -encoding utf-8 [file join [file dirname [info script]] tool_environment.tcl]
+#### proc demo_push_tool_environment {runtime} {
+####     set candidates [list [file normalize [file join [file dirname [info nameofexecutable]] .. .. ..]]]
+####     if {[info exists ::env(XILINX_VIVADO)]} {lappend candidates $::env(XILINX_VIVADO)}
+####     if {[info exists ::env(RDI_DATADIR)]} {
+####         foreach directory [split $::env(RDI_DATADIR) {;}] {
+####             lappend candidates [file dirname $directory]
+####         }
+####     }
+####     set installation {}
+####     foreach candidate $candidates {
+####         if {[file exists [file join $candidate bin vivado.bat]] &&
+####             [file exists [file join $candidate tps mingw 6.2.0 win64.o nt bin gcc.exe]]} {
+####             set installation [file normalize $candidate]
+####             break
+####         }
+####     }
+####     if {$installation eq {}} {error "Cannot locate a complete Vivado 2022.2 installation and its GCC."}
+#### 
+####     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+####     set roots [list $installation]
+####     if {$use_runtime} {set roots [linsert $roots 0 $runtime]}
+####     set libdirs {}
+####     foreach root $roots {lappend libdirs [file join $root lib win64.o]}
+####     foreach library {librdi_simulator_kernel.dll librdi_simbridge_kernel.dll} {
+####         set found 0
+####         foreach directory $libdirs {
+####             if {[file exists [file join $directory $library]]} {set found 1; break}
+####         }
+####         if {!$found} {error "Missing simulator runtime library: $library"}
+####     }
+#### 
+####     set gcc [file join $installation tps mingw 6.2.0 win64.o nt bin]
+####     set paths [list [file join $installation bin] $gcc]
+####     if {$use_runtime} {set paths [linsert $paths 0 [file join $runtime bin unwrapped win64.o]]}
+####     lappend paths [file join $installation tps mingw 6.2.0 win64.o nt libexec gcc x86_64-w64-mingw32 6.2.0]
+####     foreach directory $libdirs {lappend paths $directory}
+#### 
+####     set saved [dict create]
+####     foreach key {PATH LIBRARY_PATH XILINX_PATH XILINX_VIVADO RDI_APPROOT RDI_BINROOT RDI_LIBDIR RDI_DATADIR HDI_APPROOT} {
+####         if {![catch {set ::env($key)} value]} {
+####             dict set saved $key [list 1 $value]
+####         } else {
+####             dict set saved $key [list 0 {}]
+####         }
+####     }
+####     # 仅设置 XILINX_PATH 无法修复已启动 GUI 中缓存或继承的搜索路径。
+####     # 显式提供库搜索目录，避免链接器报找不到仿真内核。
+####     set ::env(PATH) "[join $paths {;}];$::env(PATH)"
+####     set ::env(LIBRARY_PATH) [join $libdirs {;}]
+####     set ::env(XILINX_VIVADO) $installation
+####     if {$use_runtime} {set ::env(XILINX_PATH) $runtime} else {unset -nocomplain ::env(XILINX_PATH)}
+####     set ::env(RDI_APPROOT) [join $roots {;}]
+####     set ::env(RDI_BINROOT) [file join $installation bin]
+####     set ::env(RDI_LIBDIR) [join $libdirs {;}]
+####     set ::env(RDI_DATADIR) [file join $installation data]
+####     set ::env(HDI_APPROOT) $installation
+####     puts "DEMO_TOOLCHAIN: $installation"
+####     puts "DEMO_GCC: $gcc"
+####     puts "DEMO_LIBRARY_PATH: $::env(LIBRARY_PATH)"
+####     return $saved
+#### }
+#### proc demo_pop_tool_environment {saved} {
+####     dict for {key entry} $saved {
+####         if {[lindex $entry 0]} {
+####             set ::env($key) [lindex $entry 1]
+####         } else {
+####             unset -nocomplain ::env($key)
+####         }
+####     }
+#### }
+### proc run_demo_version {version} {
+###     global four_demo_root
+###     set root $four_demo_root
+###     if {$version ni {base mask ab dot}} {error "Unknown version: $version"}
+###     set tops [dict create base attention_ip mask attention_ip_causal_mask ab attention_ip_parallel dot attention_ip_parallel_dot]
+###     # 先检查所选输入，格式有误时不启动仿真。
+###     set counts {q 4 k 32 v 32}
+###     if {$version ne "base"} {lappend counts control 2}
+###     foreach {name count} $counts {
+###         set fh [open [file join $root input ${version}_${name}.hex] r]
+###         set tokens [regexp -all -inline {\S+} [read $fh]]
+###         close $fh
+###         if {[llength $tokens] != $count} {error "$version/$name requires $count bytes"}
+###         foreach token $tokens {
+###             if {![regexp {^[0-9a-fA-F]{2}$} $token]} {error "Invalid byte: $token"}
+###         }
+###         if {$name eq "control"} {
+###             scan [lindex $tokens 0] %x enabled
+###             scan [lindex $tokens 1] %x position
+###             if {$enabled>1 || $position>7} {error "Control requires 00/01 and 00..07"}
+###         }
+###     }
+###     if {[llength [get_projects -quiet]] > 0} {
+###         catch {close_sim}
+###         # 重新打开工程以清除仿真工具缓存的上一仿真集编译列表。
+###         close_project
+###     }
+###     if {[llength [get_projects -quiet]] == 0} {
+###         set xpr [file join $root project attention_four_versions.xpr]
+###         if {[file exists $xpr]} {
+###             open_project $xpr
+###         } else {
+###             create_project attention_four_versions [file join $root project] -part xc7z010iclg225-1L
+###             set_property source_mgmt_mode None [current_project]
+###             add_files -norecurse [glob [file join $root rtl *.v]]
+###             foreach label {base mask ab dot} {
+###                 set fs sim_$label
+###                 create_fileset -simset $fs
+###                 add_files -fileset $fs -norecurse [file join $root tb tb_demo_${label}.sv]
+###                 add_files -fileset $fs -norecurse [glob [file join $root input ${label}_*.hex]]
+###                 set_property top tb_demo_$label [get_filesets $fs]
+###                 set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###             }
+###             set_property file_type {Memory Initialization Files} [get_files *.hex]
+###         }
+###     }
+###     set fs sim_$version
+###     set top tb_demo_$version
+###     # 显式编译四个独立测试平台，展开时仅运行选中的顶层。
+###     # 避免本机自动层次分析失效以及仿真集切换时沿用不完整的编译列表。
+###     set_property source_mgmt_mode None [current_project]
+###     foreach label {base mask ab dot} {
+###         set simset [get_filesets sim_$label]
+###         foreach tb_file [glob [file join $root tb *.sv]] {
+###             if {[llength [get_files -quiet -of_objects $simset $tb_file]] == 0} {
+###                 add_files -fileset sim_$label -norecurse $tb_file
+###             }
+###         }
+###     }
+###     set_property top [dict get $tops $version] [get_filesets sources_1]
+###     current_fileset -simset [get_filesets $fs]
+###     set_property top $top [get_filesets $fs]
+###     set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###     # 本机运行库异常时复用已经准备好的隔离副本，仅影响本次工具调用。
+###     set runtime [file normalize [file join $::env(LOCALAPPDATA) attention-tools vivado-runtime-2022.2-dot]]
+###     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+###     set saved_environment [demo_push_tool_environment $runtime]
+###     set code [catch {
+###         # 分步执行流程会复用模拟器缓存；切换后清除失效工程对象和源码列表。
+###         if {[llength [info commands ::tclapp::xilinx::xsim::usf_init_vars]]} {
+###             ::tclapp::xilinx::xsim::usf_init_vars
+###         }
+###         launch_simulation -simset $fs -step compile
+###         launch_simulation -simset $fs -step elaborate
+###         if {$use_runtime} {
+###             set kernel [file join $root project attention_four_versions.sim $fs behav xsim xsim.dir ${top}_behav]
+###             foreach dll [glob [file join $runtime bin unwrapped win64.o *.dll]] {
+###                 file copy -force $dll $kernel
+###             }
+###         }
+###         launch_simulation -simset $fs -step simulate
+###         log_wave -r /$top/*
+###         create_wave_config ${version}_wave
+###         foreach name {clk rst_n start data_ready q_valid kv_valid score_valid weight_valid out_valid done} {
+###             add_wave /$top/$name
+###         }
+###         if {$version ne "base"} {
+###             foreach name {mask_enable mask_enable_latched weight_masked} {add_wave /$top/$name}
+###         }
+###         set item [add_wave /$top/state_name]
+###         set_property radix ascii $item
+###         foreach name {state token_index elem_index score_index weight_index weight_raw l_raw} {
+###             set item [add_wave /$top/$name]
+###             set_property radix unsigned $item
+###         }
+###         foreach name {q_in k_in v_in score_data x_max delta_data acc0_raw acc1_raw acc2_raw acc3_raw out_data result0 result1 result2 result3} {
+###             set item [add_wave /$top/$name]
+###             set_property radix dec $item
+###         }
+###         run all
+###         catch {wave zoom full}
+###         save_wave_config [file join $root waves ${version}.wcfg]
+###         puts "FOUR_DEMO_COMPLETED: $version"
+###     } message]
+###     demo_pop_tool_environment $saved_environment
+###     if {$code != 0} {error $message}
+### }
+## run_demo_version ab
+INFO: [Simtcl 6-16] Simulation closed
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+DEMO_TOOLCHAIN: D:/Xilinx_Vitis_2022/Vivado/2022.2
+DEMO_GCC: D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx_Vitis_2022/Vivado/2022.2/lib/win64.o
+Command: launch_simulation -step compile -simset sim_ab
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_ab'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_ab'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim'
+"xvlog --incr --relax -prj tb_demo_ab_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_ab
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_ab'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_ab'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_ab_behav xil_defaultlib.tb_demo_ab xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_ab_behav xil_defaultlib.tb_demo_ab xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Command: launch_simulation -step simulate -simset sim_ab
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_ab'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_ab'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_ab' in fileset 'sim_ab'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim/ab_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_ab'...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_ab/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_demo_ab_behav -key {Behavioral:sim_ab:Functional:tb_demo_ab} -tclbatch {tb_demo_ab.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_demo_ab.tcl
+### current_wave_config
+VERSION: ab
+MASK enable=1 query_index=2
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_demo_ab_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+SCORE[0] = 3 RUNNING_MAX = 3
+SCORE[1] = 2 RUNNING_MAX = 3
+SCORE[2] = 1 RUNNING_MAX = 3
+SCORE[3] = 7 RUNNING_MAX = 3
+SCORE[4] = 8 RUNNING_MAX = 3
+SCORE[5] = 9 RUNNING_MAX = 3
+SCORE[6] = 10 RUNNING_MAX = 3
+SCORE[7] = 11 RUNNING_MAX = 3
+WEIGHT[0]: x_max=3 delta=0 raw=16 masked=0
+WEIGHT[1]: x_max=3 delta=-1 raw=6 masked=0
+WEIGHT[2]: x_max=3 delta=-2 raw=2 masked=0
+WEIGHT[3]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[4]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[5]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[6]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[7]: x_max=3 delta=0 raw=0 masked=1
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=93 final_kv_to_done=57
+L_raw=24 ACC_raw=[34,68,-34,136]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 1010 ns : File "D:/VivadoProject/attention_demo/defense_four_versions/tb/tb_demo_ab.sv" Line 101
+FOUR_DEMO_COMPLETED: ab
+DELIVERY_ENTRY_PASSED: 03_ab.tcl
+## set four_demo_root [file normalize [file dirname [info script]]]
+## source -encoding utf-8 [file join $four_demo_root run_version.tcl]
+### source -encoding utf-8 [file join [file dirname [info script]] tool_environment.tcl]
+#### proc demo_push_tool_environment {runtime} {
+####     set candidates [list [file normalize [file join [file dirname [info nameofexecutable]] .. .. ..]]]
+####     if {[info exists ::env(XILINX_VIVADO)]} {lappend candidates $::env(XILINX_VIVADO)}
+####     if {[info exists ::env(RDI_DATADIR)]} {
+####         foreach directory [split $::env(RDI_DATADIR) {;}] {
+####             lappend candidates [file dirname $directory]
+####         }
+####     }
+####     set installation {}
+####     foreach candidate $candidates {
+####         if {[file exists [file join $candidate bin vivado.bat]] &&
+####             [file exists [file join $candidate tps mingw 6.2.0 win64.o nt bin gcc.exe]]} {
+####             set installation [file normalize $candidate]
+####             break
+####         }
+####     }
+####     if {$installation eq {}} {error "Cannot locate a complete Vivado 2022.2 installation and its GCC."}
+#### 
+####     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+####     set roots [list $installation]
+####     if {$use_runtime} {set roots [linsert $roots 0 $runtime]}
+####     set libdirs {}
+####     foreach root $roots {lappend libdirs [file join $root lib win64.o]}
+####     foreach library {librdi_simulator_kernel.dll librdi_simbridge_kernel.dll} {
+####         set found 0
+####         foreach directory $libdirs {
+####             if {[file exists [file join $directory $library]]} {set found 1; break}
+####         }
+####         if {!$found} {error "Missing simulator runtime library: $library"}
+####     }
+#### 
+####     set gcc [file join $installation tps mingw 6.2.0 win64.o nt bin]
+####     set paths [list [file join $installation bin] $gcc]
+####     if {$use_runtime} {set paths [linsert $paths 0 [file join $runtime bin unwrapped win64.o]]}
+####     lappend paths [file join $installation tps mingw 6.2.0 win64.o nt libexec gcc x86_64-w64-mingw32 6.2.0]
+####     foreach directory $libdirs {lappend paths $directory}
+#### 
+####     set saved [dict create]
+####     foreach key {PATH LIBRARY_PATH XILINX_PATH XILINX_VIVADO RDI_APPROOT RDI_BINROOT RDI_LIBDIR RDI_DATADIR HDI_APPROOT} {
+####         if {![catch {set ::env($key)} value]} {
+####             dict set saved $key [list 1 $value]
+####         } else {
+####             dict set saved $key [list 0 {}]
+####         }
+####     }
+####     # 仅设置 XILINX_PATH 无法修复已启动 GUI 中缓存或继承的搜索路径。
+####     # 显式提供库搜索目录，避免链接器报找不到仿真内核。
+####     set ::env(PATH) "[join $paths {;}];$::env(PATH)"
+####     set ::env(LIBRARY_PATH) [join $libdirs {;}]
+####     set ::env(XILINX_VIVADO) $installation
+####     if {$use_runtime} {set ::env(XILINX_PATH) $runtime} else {unset -nocomplain ::env(XILINX_PATH)}
+####     set ::env(RDI_APPROOT) [join $roots {;}]
+####     set ::env(RDI_BINROOT) [file join $installation bin]
+####     set ::env(RDI_LIBDIR) [join $libdirs {;}]
+####     set ::env(RDI_DATADIR) [file join $installation data]
+####     set ::env(HDI_APPROOT) $installation
+####     puts "DEMO_TOOLCHAIN: $installation"
+####     puts "DEMO_GCC: $gcc"
+####     puts "DEMO_LIBRARY_PATH: $::env(LIBRARY_PATH)"
+####     return $saved
+#### }
+#### proc demo_pop_tool_environment {saved} {
+####     dict for {key entry} $saved {
+####         if {[lindex $entry 0]} {
+####             set ::env($key) [lindex $entry 1]
+####         } else {
+####             unset -nocomplain ::env($key)
+####         }
+####     }
+#### }
+### proc run_demo_version {version} {
+###     global four_demo_root
+###     set root $four_demo_root
+###     if {$version ni {base mask ab dot}} {error "Unknown version: $version"}
+###     set tops [dict create base attention_ip mask attention_ip_causal_mask ab attention_ip_parallel dot attention_ip_parallel_dot]
+###     # 先检查所选输入，格式有误时不启动仿真。
+###     set counts {q 4 k 32 v 32}
+###     if {$version ne "base"} {lappend counts control 2}
+###     foreach {name count} $counts {
+###         set fh [open [file join $root input ${version}_${name}.hex] r]
+###         set tokens [regexp -all -inline {\S+} [read $fh]]
+###         close $fh
+###         if {[llength $tokens] != $count} {error "$version/$name requires $count bytes"}
+###         foreach token $tokens {
+###             if {![regexp {^[0-9a-fA-F]{2}$} $token]} {error "Invalid byte: $token"}
+###         }
+###         if {$name eq "control"} {
+###             scan [lindex $tokens 0] %x enabled
+###             scan [lindex $tokens 1] %x position
+###             if {$enabled>1 || $position>7} {error "Control requires 00/01 and 00..07"}
+###         }
+###     }
+###     if {[llength [get_projects -quiet]] > 0} {
+###         catch {close_sim}
+###         # 重新打开工程以清除仿真工具缓存的上一仿真集编译列表。
+###         close_project
+###     }
+###     if {[llength [get_projects -quiet]] == 0} {
+###         set xpr [file join $root project attention_four_versions.xpr]
+###         if {[file exists $xpr]} {
+###             open_project $xpr
+###         } else {
+###             create_project attention_four_versions [file join $root project] -part xc7z010iclg225-1L
+###             set_property source_mgmt_mode None [current_project]
+###             add_files -norecurse [glob [file join $root rtl *.v]]
+###             foreach label {base mask ab dot} {
+###                 set fs sim_$label
+###                 create_fileset -simset $fs
+###                 add_files -fileset $fs -norecurse [file join $root tb tb_demo_${label}.sv]
+###                 add_files -fileset $fs -norecurse [glob [file join $root input ${label}_*.hex]]
+###                 set_property top tb_demo_$label [get_filesets $fs]
+###                 set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###             }
+###             set_property file_type {Memory Initialization Files} [get_files *.hex]
+###         }
+###     }
+###     set fs sim_$version
+###     set top tb_demo_$version
+###     # 显式编译四个独立测试平台，展开时仅运行选中的顶层。
+###     # 避免本机自动层次分析失效以及仿真集切换时沿用不完整的编译列表。
+###     set_property source_mgmt_mode None [current_project]
+###     foreach label {base mask ab dot} {
+###         set simset [get_filesets sim_$label]
+###         foreach tb_file [glob [file join $root tb *.sv]] {
+###             if {[llength [get_files -quiet -of_objects $simset $tb_file]] == 0} {
+###                 add_files -fileset sim_$label -norecurse $tb_file
+###             }
+###         }
+###     }
+###     set_property top [dict get $tops $version] [get_filesets sources_1]
+###     current_fileset -simset [get_filesets $fs]
+###     set_property top $top [get_filesets $fs]
+###     set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###     # 本机运行库异常时复用已经准备好的隔离副本，仅影响本次工具调用。
+###     set runtime [file normalize [file join $::env(LOCALAPPDATA) attention-tools vivado-runtime-2022.2-dot]]
+###     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+###     set saved_environment [demo_push_tool_environment $runtime]
+###     set code [catch {
+###         # 分步执行流程会复用模拟器缓存；切换后清除失效工程对象和源码列表。
+###         if {[llength [info commands ::tclapp::xilinx::xsim::usf_init_vars]]} {
+###             ::tclapp::xilinx::xsim::usf_init_vars
+###         }
+###         launch_simulation -simset $fs -step compile
+###         launch_simulation -simset $fs -step elaborate
+###         if {$use_runtime} {
+###             set kernel [file join $root project attention_four_versions.sim $fs behav xsim xsim.dir ${top}_behav]
+###             foreach dll [glob [file join $runtime bin unwrapped win64.o *.dll]] {
+###                 file copy -force $dll $kernel
+###             }
+###         }
+###         launch_simulation -simset $fs -step simulate
+###         log_wave -r /$top/*
+###         create_wave_config ${version}_wave
+###         foreach name {clk rst_n start data_ready q_valid kv_valid score_valid weight_valid out_valid done} {
+###             add_wave /$top/$name
+###         }
+###         if {$version ne "base"} {
+###             foreach name {mask_enable mask_enable_latched weight_masked} {add_wave /$top/$name}
+###         }
+###         set item [add_wave /$top/state_name]
+###         set_property radix ascii $item
+###         foreach name {state token_index elem_index score_index weight_index weight_raw l_raw} {
+###             set item [add_wave /$top/$name]
+###             set_property radix unsigned $item
+###         }
+###         foreach name {q_in k_in v_in score_data x_max delta_data acc0_raw acc1_raw acc2_raw acc3_raw out_data result0 result1 result2 result3} {
+###             set item [add_wave /$top/$name]
+###             set_property radix dec $item
+###         }
+###         run all
+###         catch {wave zoom full}
+###         save_wave_config [file join $root waves ${version}.wcfg]
+###         puts "FOUR_DEMO_COMPLETED: $version"
+###     } message]
+###     demo_pop_tool_environment $saved_environment
+###     if {$code != 0} {error $message}
+### }
+## run_demo_version dot
+INFO: [Simtcl 6-16] Simulation closed
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+DEMO_TOOLCHAIN: D:/Xilinx_Vitis_2022/Vivado/2022.2
+DEMO_GCC: D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx_Vitis_2022/Vivado/2022.2/lib/win64.o
+Command: launch_simulation -step compile -simset sim_dot
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_dot'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_dot'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim'
+"xvlog --incr --relax -prj tb_demo_dot_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_dot
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_dot'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_dot'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_dot_behav xil_defaultlib.tb_demo_dot xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_dot_behav xil_defaultlib.tb_demo_dot xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Command: launch_simulation -step simulate -simset sim_dot
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_dot'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_dot'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_dot' in fileset 'sim_dot'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_control.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim/dot_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_dot'...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_dot/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_demo_dot_behav -key {Behavioral:sim_dot:Functional:tb_demo_dot} -tclbatch {tb_demo_dot.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_demo_dot.tcl
+### current_wave_config
+VERSION: dot
+MASK enable=1 query_index=2
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_demo_dot_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+SCORE[0] = 3 RUNNING_MAX = 3
+SCORE[1] = 2 RUNNING_MAX = 3
+SCORE[2] = 1 RUNNING_MAX = 3
+SCORE[3] = 7 RUNNING_MAX = 3
+SCORE[4] = 8 RUNNING_MAX = 3
+SCORE[5] = 9 RUNNING_MAX = 3
+SCORE[6] = 10 RUNNING_MAX = 3
+SCORE[7] = 11 RUNNING_MAX = 3
+WEIGHT[0]: x_max=3 delta=0 raw=16 masked=0
+WEIGHT[1]: x_max=3 delta=-1 raw=6 masked=0
+WEIGHT[2]: x_max=3 delta=-2 raw=2 masked=0
+WEIGHT[3]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[4]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[5]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[6]: x_max=3 delta=0 raw=0 masked=1
+WEIGHT[7]: x_max=3 delta=0 raw=0 masked=1
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=69 final_kv_to_done=33
+L_raw=24 ACC_raw=[34,68,-34,136]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 770 ns : File "D:/VivadoProject/attention_demo/defense_four_versions/tb/tb_demo_dot.sv" Line 101
+FOUR_DEMO_COMPLETED: dot
+DELIVERY_ENTRY_PASSED: 04_dot.tcl
+## set four_demo_root [file normalize [file dirname [info script]]]
+## source -encoding utf-8 [file join $four_demo_root run_version.tcl]
+### source -encoding utf-8 [file join [file dirname [info script]] tool_environment.tcl]
+#### proc demo_push_tool_environment {runtime} {
+####     set candidates [list [file normalize [file join [file dirname [info nameofexecutable]] .. .. ..]]]
+####     if {[info exists ::env(XILINX_VIVADO)]} {lappend candidates $::env(XILINX_VIVADO)}
+####     if {[info exists ::env(RDI_DATADIR)]} {
+####         foreach directory [split $::env(RDI_DATADIR) {;}] {
+####             lappend candidates [file dirname $directory]
+####         }
+####     }
+####     set installation {}
+####     foreach candidate $candidates {
+####         if {[file exists [file join $candidate bin vivado.bat]] &&
+####             [file exists [file join $candidate tps mingw 6.2.0 win64.o nt bin gcc.exe]]} {
+####             set installation [file normalize $candidate]
+####             break
+####         }
+####     }
+####     if {$installation eq {}} {error "Cannot locate a complete Vivado 2022.2 installation and its GCC."}
+#### 
+####     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+####     set roots [list $installation]
+####     if {$use_runtime} {set roots [linsert $roots 0 $runtime]}
+####     set libdirs {}
+####     foreach root $roots {lappend libdirs [file join $root lib win64.o]}
+####     foreach library {librdi_simulator_kernel.dll librdi_simbridge_kernel.dll} {
+####         set found 0
+####         foreach directory $libdirs {
+####             if {[file exists [file join $directory $library]]} {set found 1; break}
+####         }
+####         if {!$found} {error "Missing simulator runtime library: $library"}
+####     }
+#### 
+####     set gcc [file join $installation tps mingw 6.2.0 win64.o nt bin]
+####     set paths [list [file join $installation bin] $gcc]
+####     if {$use_runtime} {set paths [linsert $paths 0 [file join $runtime bin unwrapped win64.o]]}
+####     lappend paths [file join $installation tps mingw 6.2.0 win64.o nt libexec gcc x86_64-w64-mingw32 6.2.0]
+####     foreach directory $libdirs {lappend paths $directory}
+#### 
+####     set saved [dict create]
+####     foreach key {PATH LIBRARY_PATH XILINX_PATH XILINX_VIVADO RDI_APPROOT RDI_BINROOT RDI_LIBDIR RDI_DATADIR HDI_APPROOT} {
+####         if {![catch {set ::env($key)} value]} {
+####             dict set saved $key [list 1 $value]
+####         } else {
+####             dict set saved $key [list 0 {}]
+####         }
+####     }
+####     # 仅设置 XILINX_PATH 无法修复已启动 GUI 中缓存或继承的搜索路径。
+####     # 显式提供库搜索目录，避免链接器报找不到仿真内核。
+####     set ::env(PATH) "[join $paths {;}];$::env(PATH)"
+####     set ::env(LIBRARY_PATH) [join $libdirs {;}]
+####     set ::env(XILINX_VIVADO) $installation
+####     if {$use_runtime} {set ::env(XILINX_PATH) $runtime} else {unset -nocomplain ::env(XILINX_PATH)}
+####     set ::env(RDI_APPROOT) [join $roots {;}]
+####     set ::env(RDI_BINROOT) [file join $installation bin]
+####     set ::env(RDI_LIBDIR) [join $libdirs {;}]
+####     set ::env(RDI_DATADIR) [file join $installation data]
+####     set ::env(HDI_APPROOT) $installation
+####     puts "DEMO_TOOLCHAIN: $installation"
+####     puts "DEMO_GCC: $gcc"
+####     puts "DEMO_LIBRARY_PATH: $::env(LIBRARY_PATH)"
+####     return $saved
+#### }
+#### proc demo_pop_tool_environment {saved} {
+####     dict for {key entry} $saved {
+####         if {[lindex $entry 0]} {
+####             set ::env($key) [lindex $entry 1]
+####         } else {
+####             unset -nocomplain ::env($key)
+####         }
+####     }
+#### }
+### proc run_demo_version {version} {
+###     global four_demo_root
+###     set root $four_demo_root
+###     if {$version ni {base mask ab dot}} {error "Unknown version: $version"}
+###     set tops [dict create base attention_ip mask attention_ip_causal_mask ab attention_ip_parallel dot attention_ip_parallel_dot]
+###     # 先检查所选输入，格式有误时不启动仿真。
+###     set counts {q 4 k 32 v 32}
+###     if {$version ne "base"} {lappend counts control 2}
+###     foreach {name count} $counts {
+###         set fh [open [file join $root input ${version}_${name}.hex] r]
+###         set tokens [regexp -all -inline {\S+} [read $fh]]
+###         close $fh
+###         if {[llength $tokens] != $count} {error "$version/$name requires $count bytes"}
+###         foreach token $tokens {
+###             if {![regexp {^[0-9a-fA-F]{2}$} $token]} {error "Invalid byte: $token"}
+###         }
+###         if {$name eq "control"} {
+###             scan [lindex $tokens 0] %x enabled
+###             scan [lindex $tokens 1] %x position
+###             if {$enabled>1 || $position>7} {error "Control requires 00/01 and 00..07"}
+###         }
+###     }
+###     if {[llength [get_projects -quiet]] > 0} {
+###         catch {close_sim}
+###         # 重新打开工程以清除仿真工具缓存的上一仿真集编译列表。
+###         close_project
+###     }
+###     if {[llength [get_projects -quiet]] == 0} {
+###         set xpr [file join $root project attention_four_versions.xpr]
+###         if {[file exists $xpr]} {
+###             open_project $xpr
+###         } else {
+###             create_project attention_four_versions [file join $root project] -part xc7z010iclg225-1L
+###             set_property source_mgmt_mode None [current_project]
+###             add_files -norecurse [glob [file join $root rtl *.v]]
+###             foreach label {base mask ab dot} {
+###                 set fs sim_$label
+###                 create_fileset -simset $fs
+###                 add_files -fileset $fs -norecurse [file join $root tb tb_demo_${label}.sv]
+###                 add_files -fileset $fs -norecurse [glob [file join $root input ${label}_*.hex]]
+###                 set_property top tb_demo_$label [get_filesets $fs]
+###                 set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###             }
+###             set_property file_type {Memory Initialization Files} [get_files *.hex]
+###         }
+###     }
+###     set fs sim_$version
+###     set top tb_demo_$version
+###     # 显式编译四个独立测试平台，展开时仅运行选中的顶层。
+###     # 避免本机自动层次分析失效以及仿真集切换时沿用不完整的编译列表。
+###     set_property source_mgmt_mode None [current_project]
+###     foreach label {base mask ab dot} {
+###         set simset [get_filesets sim_$label]
+###         foreach tb_file [glob [file join $root tb *.sv]] {
+###             if {[llength [get_files -quiet -of_objects $simset $tb_file]] == 0} {
+###                 add_files -fileset sim_$label -norecurse $tb_file
+###             }
+###         }
+###     }
+###     set_property top [dict get $tops $version] [get_filesets sources_1]
+###     current_fileset -simset [get_filesets $fs]
+###     set_property top $top [get_filesets $fs]
+###     set_property xsim.simulate.runtime 0ns [get_filesets $fs]
+###     # 本机运行库异常时复用已经准备好的隔离副本，仅影响本次工具调用。
+###     set runtime [file normalize [file join $::env(LOCALAPPDATA) attention-tools vivado-runtime-2022.2-dot]]
+###     set use_runtime [file exists [file join $runtime bin unwrapped win64.o xelab.exe]]
+###     set saved_environment [demo_push_tool_environment $runtime]
+###     set code [catch {
+###         # 分步执行流程会复用模拟器缓存；切换后清除失效工程对象和源码列表。
+###         if {[llength [info commands ::tclapp::xilinx::xsim::usf_init_vars]]} {
+###             ::tclapp::xilinx::xsim::usf_init_vars
+###         }
+###         launch_simulation -simset $fs -step compile
+###         launch_simulation -simset $fs -step elaborate
+###         if {$use_runtime} {
+###             set kernel [file join $root project attention_four_versions.sim $fs behav xsim xsim.dir ${top}_behav]
+###             foreach dll [glob [file join $runtime bin unwrapped win64.o *.dll]] {
+###                 file copy -force $dll $kernel
+###             }
+###         }
+###         launch_simulation -simset $fs -step simulate
+###         log_wave -r /$top/*
+###         create_wave_config ${version}_wave
+###         foreach name {clk rst_n start data_ready q_valid kv_valid score_valid weight_valid out_valid done} {
+###             add_wave /$top/$name
+###         }
+###         if {$version ne "base"} {
+###             foreach name {mask_enable mask_enable_latched weight_masked} {add_wave /$top/$name}
+###         }
+###         set item [add_wave /$top/state_name]
+###         set_property radix ascii $item
+###         foreach name {state token_index elem_index score_index weight_index weight_raw l_raw} {
+###             set item [add_wave /$top/$name]
+###             set_property radix unsigned $item
+###         }
+###         foreach name {q_in k_in v_in score_data x_max delta_data acc0_raw acc1_raw acc2_raw acc3_raw out_data result0 result1 result2 result3} {
+###             set item [add_wave /$top/$name]
+###             set_property radix dec $item
+###         }
+###         run all
+###         catch {wave zoom full}
+###         save_wave_config [file join $root waves ${version}.wcfg]
+###         puts "FOUR_DEMO_COMPLETED: $version"
+###     } message]
+###     demo_pop_tool_environment $saved_environment
+###     if {$code != 0} {error $message}
+### }
+## run_demo_version base
+INFO: [Simtcl 6-16] Simulation closed
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+DEMO_TOOLCHAIN: D:/Xilinx_Vitis_2022/Vivado/2022.2
+DEMO_GCC: D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/mingw/6.2.0/win64.o/nt/bin
+DEMO_LIBRARY_PATH: C:/Users/admin/AppData/Local/attention-tools/vivado-runtime-2022.2-dot/lib/win64.o;D:/Xilinx_Vitis_2022/Vivado/2022.2/lib/win64.o
+Command: launch_simulation -step compile -simset sim_base
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_base'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_base'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+"xvlog --incr --relax -prj tb_demo_base_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/defense_four_versions/rtl/attention_ip.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/defense_four_versions/rtl/attention_ip_causal_mask.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_causal_mask
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/defense_four_versions/rtl/attention_ip_parallel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/defense_four_versions/rtl/attention_ip_parallel_dot.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module attention_ip_parallel_dot
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/defense_four_versions/rtl/exp_lut.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exp_lut
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/defense_four_versions/rtl/round_div_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module round_div_signed
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/defense_four_versions/tb/tb_demo_dot.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_dot
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/defense_four_versions/tb/tb_demo_ab.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_ab
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/defense_four_versions/tb/tb_demo_base.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_base
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/VivadoProject/attention_demo/defense_four_versions/tb/tb_demo_mask.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_demo_mask
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_base
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_base'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_base'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_base_behav xil_defaultlib.tb_demo_base xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_demo_base_behav xil_defaultlib.tb_demo_base xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.exp_lut
+Compiling module xil_defaultlib.round_div_signed
+Compiling module xil_defaultlib.attention_ip
+Compiling module xil_defaultlib.tb_demo_base
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_demo_base_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Command: launch_simulation -step simulate -simset sim_base
+INFO: [Vivado 12-12493] Simulation top is 'tb_demo_base'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_base'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx_Vitis_2022/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_demo_base' in fileset 'sim_base'...
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_k.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_q.hex'
+INFO: [SIM-utils-43] Exported 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim/base_v.hex'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_base'...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/VivadoProject/attention_demo/defense_four_versions/project/attention_four_versions.sim/sim_base/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_demo_base_behav -key {Behavioral:sim_base:Functional:tb_demo_base} -tclbatch {tb_demo_base.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_demo_base.tcl
+### current_wave_config
+VERSION: base
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_demo_base_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+SCORE[0] = 3
+SCORE[1] = 2
+SCORE[2] = 1
+SCORE[3] = 0
+SCORE[4] = -1
+SCORE[5] = 3
+SCORE[6] = 2
+SCORE[7] = 1
+WEIGHT[0]: x_max=3 delta=0 raw=16
+WEIGHT[1]: x_max=3 delta=-1 raw=6
+WEIGHT[2]: x_max=3 delta=-2 raw=2
+WEIGHT[3]: x_max=3 delta=-3 raw=1
+WEIGHT[4]: x_max=3 delta=-4 raw=0
+WEIGHT[5]: x_max=3 delta=0 raw=16
+WEIGHT[6]: x_max=3 delta=-1 raw=6
+WEIGHT[7]: x_max=3 delta=-2 raw=2
+OUTPUT[0] = 1
+OUTPUT[1] = 3
+OUTPUT[2] = -1
+OUTPUT[3] = 6
+CYCLES: start_to_done=125 final_kv_to_done=89
+L_raw=49 ACC_raw=[72,144,-72,288]
+ACTUAL RESULT = [1, 3, -1, 6]
+DEMO FINISHED: actual RTL values only; no expected-answer comparison.
+$finish called at time : 1330 ns : File "D:/VivadoProject/attention_demo/defense_four_versions/tb/tb_demo_base.sv" Line 90
+FOUR_DEMO_COMPLETED: base
+DELIVERY_ENTRY_PASSED: 01_base.tcl
+# puts "DELIVERY_ALL_COMPLETED"
+DELIVERY_ALL_COMPLETED
+# exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 12 14:42:49 2026...

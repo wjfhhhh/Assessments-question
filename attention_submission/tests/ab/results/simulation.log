@@ -1,0 +1,24 @@
+DEMO score[0] = 3
+DEMO score[1] = 2
+DEMO score[2] = 1
+DEMO score[3] = 0
+DEMO score[4] = -1
+DEMO score[5] = 3
+DEMO score[6] = 2
+DEMO score[7] = 1
+DEMO weight[0]: delta=0 raw=16
+DEMO weight[1]: delta=-1 raw=6
+DEMO weight[2]: delta=-2 raw=2
+DEMO weight[3]: delta=0 raw=0
+DEMO weight[4]: delta=0 raw=0
+DEMO weight[5]: delta=0 raw=0
+DEMO weight[6]: delta=0 raw=0
+DEMO weight[7]: delta=0 raw=0
+DEMO L_raw=24 ACC_raw=[34,68,-34,136]
+DEMO output[0]=1
+DEMO output[1]=3
+DEMO output[2]=-1
+DEMO output[3]=6
+PASS: 1071 cases, 8568 scores, 8568 weights, 4284 outputs, 2074793 division inputs
+CYCLES: A=89 B=57 after final KV; savings=32; A/B results matched for all cases
+tb_attention_parallel.sv:325: $finish called at 2074794000 (1ps)

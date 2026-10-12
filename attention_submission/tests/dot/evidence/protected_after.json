@@ -1,0 +1,138 @@
+[
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\attention_ip.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\attention_score_stage.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\attention_weight_stage.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\exp_lut.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\rtl\\round_div_signed.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\tb\\tb_attention_ip.sv",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\tb\\tb_attention_score_stage.sv",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\tb\\tb_attention_weight_stage.sv",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\tb\\trace_capture.sv",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_demo\\rtl\\attention_ip.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_demo\\rtl\\exp_lut.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_demo\\rtl\\round_div_signed.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_mask\\rtl\\attention_ip_causal_mask.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_mask\\rtl\\exp_lut.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_mask\\rtl\\round_div_signed.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_mask\\tb\\tb_attention_mask_demo.sv",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_mask\\input\\control.hex",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_mask\\input\\k.hex",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_mask\\input\\q.hex",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_mask\\input\\v.hex",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_mask\\run_demo.tcl",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\extensions\\parallel_update\\rtl\\attention_ip_parallel.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\extensions\\parallel_update\\rtl\\exp_lut.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\extensions\\parallel_update\\rtl\\round_div_signed.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\项目\\集协考核\\Assessments-question\\attention\\extensions\\parallel_update\\tb\\tb_attention_parallel.sv",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_parallel\\rtl\\attention_ip_parallel.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_parallel\\rtl\\exp_lut.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_parallel\\rtl\\round_div_signed.v",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_parallel\\tb\\tb_attention_parallel_demo.sv",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_parallel\\input\\control.hex",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_parallel\\input\\k.hex",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_parallel\\input\\q.hex",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_parallel\\input\\v.hex",
+    "unchanged": true
+  },
+  {
+    "path": "D:\\VivadoProject\\attention_demo\\defense_parallel\\run_demo.tcl",
+    "unchanged": true
+  }
+]
